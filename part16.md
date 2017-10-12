@@ -10,7 +10,7 @@
 ![](https://ws3.sinaimg.cn/large/006tNc79ly1fj9zvfv9i7j30c80ap0t3.jpg)
 ```
 
-markdown最终能显示出一定的样式主要还是通过某种手段转成了html。所以，想在代码中处理markdown内容，就不许运用第三方库来吧内容转化成html格式后再显示。
+markdown最终能显示出一定的样式主要还是通过某种手段转成了html。所以，想在代码中处理markdown内容，就必须使用第三方库来把内容转化成html格式后再显示。
 
 下面就以第三方库marked为例说明。
 
@@ -38,10 +38,10 @@ console.log(htmlContent);
 引入marked模块
 
 ```
-var marked = require('marked);
+var marked = require('marked');
 ```
 
-在render页面之前，先把post.content内容转化成html
+在res.render页面之前，先把post.content内容转化成html
 
 ```
 router.get('/posts/show', function (req, res, next) {
