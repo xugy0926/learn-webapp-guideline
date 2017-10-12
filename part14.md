@@ -1,5 +1,12 @@
 # 存储数据
 
+先确保first-app项目已经引入了mongoose
+
+```
+$ cd first-app
+$ npm install --save mongoose
+```
+
 first-app在启动项目时要连接到mongodb数据库。
 
 为了更好的管理模块，在first-app下新建一个文件夹models/，该文件用于存放数据库相关的操作文件。

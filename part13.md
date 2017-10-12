@@ -4,6 +4,8 @@
 
 mongoose官网[http://mongoosejs.com/](http://mongoosejs.com/)
 
+以下内容只作为对操作mongodb和mongoose的认识，不需要按照本篇文档操作项目。
+
 在学习操作数据库技术一般先从以下步骤进行。
 
 1. 安装mongodb数据库。
@@ -16,6 +18,13 @@ mongoose官网[http://mongoosejs.com/](http://mongoosejs.com/)
 在本地安装mongodb可自行google。
 
 在本地安装数据库时都会污染电脑的环境，避免这种情况发生可以采用docker容器的方式来安装mongodb。但在在之前必须安装docker。
+
+## 添加mongoose
+
+在项目中添加mongoose模块
+```
+$ npm install --save mongoose
+```
 
 ## 连接数据库
 
