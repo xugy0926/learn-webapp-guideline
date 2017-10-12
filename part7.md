@@ -6,7 +6,7 @@
 $ express --view=ejs
 ```
 
-用express创建项目是，后面跟了一个--view参数，它的值是ejs。这个意图很明确：在创建express项目时，请使用ejs作为模板引擎。
+用express创建项目是，后面跟了一个--view参数，它的值是ejs。这个意图很明确：在创建express项目时使用ejs作为模板引擎。
 
 项目创建成功后，在.app.js中可以看到以下代码。
 
