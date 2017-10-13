@@ -21,7 +21,7 @@ var users = require('./routes/users');
 
 ## 设置路由和逻辑处理模块
 
-在first-app/app.js文件中设置了路由和逻辑处理莫管的关系。
+在first-app/app.js文件中设置了路由和逻辑处理模块的关系。
 
 ```
 var index = require('./routes/index');
@@ -84,7 +84,7 @@ router.get('/', function(req, res, next) {
 });
 ```
 
-将“respond with a resource”修改为“zhangsan, lisi, wangermazi”，重新运行first-app再刷新页面看结果。
+将“respond with a resource”修改为“zhangsan, lisi, wangmazi”，重新运行first-app再刷新页面看结果。
 
 ## 事例
 

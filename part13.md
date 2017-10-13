@@ -1,6 +1,6 @@
 # 持久化存储 - mongodb
 
-要把数据持久化就要用到数据库，比如sqllit，mysql等比较有名的数据库，除此之外，mongodb。在开发中小型项目时mongodb足够用了，nodejs必须引用node-mongodb-native这个库来操作mongodb数据库，庆幸的是还可以通过mongoose，mongoose是mongodb数据库的模型工具库，专门为node.js设计，mongose基于node-mongodb-native并工作在异步环境下，或者你可以直接认mongoose是node-mongodb-native的拓展库，相比操作node-mongodb-native，操作mongoose时可以简化不少代码。
+要把数据持久化就要用到数据库，比如sqllit，mysql等比较有名的数据库，除此之外，mongodb。在开发小型项目时mongodb足够用了，nodejs必须引用node-mongodb-native这个库来操作mongodb数据库，庆幸的是还可以通过mongoose，mongoose是mongodb数据库的模型工具库，专门为node.js设计，mongoose基于node-mongodb-native并工作在异步环境下，或者你可以直接认mongoose是node-mongodb-native的拓展库，相比操作node-mongodb-native，操作mongoose时可以简化不少代码。
 
 mongoose官网[http://mongoosejs.com/](http://mongoosejs.com/)
 
