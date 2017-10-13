@@ -92,7 +92,7 @@ app.use('/posts', posts);
 app.set('views', path.join(__dirname, 'views'));
 ```
 
-app.set\(\)函数可以把一个值设置给app，这行代码的意识就是把./views这个路径设置给'views'这个字符串对应的值。那么，在代码执行时，app只要取出字符串'views'对应的路径即可。
+app.set\(\)函数可以把一个值设置给app，这行代码的意思就是把./views这个路径设置给'views'这个字符串对应的值。那么，在代码执行时，app只要取出字符串'views'对应的路径即可。
 
 所以，app是预先就知道了如果要找view相关的文件，就去./views的路径下找即可。现在，只需要把./routes/posts.js中的res.render\(\)函数的第一个参数'index'改成'posts'即可。
 
