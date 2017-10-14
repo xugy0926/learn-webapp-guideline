@@ -1,5 +1,24 @@
 ## 项目结构
+总览
+```
+- ../my_project/first-app/          # 工程目录
+    - bin/                          # 存放命令行相关代码
+        www                         # express的入口文件
+    - public/                       # 存放静态资源
+        javascripts
+        images
+        + stylesheets
+    - routes/                       # 存放路由逻辑
+        index.js
+        users.js
+    - views/                        # 存放页面模板
+        index.ejs
+        layout.ejs
+        error.ejs
+    package.json                    # 配置文件
+    app.js                          # 主程序文件
 
+```
 #### /bin
 
 ```
