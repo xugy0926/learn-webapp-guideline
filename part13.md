@@ -19,6 +19,8 @@ mongoose官网[http://mongoosejs.com/](http://mongoosejs.com/)
 
 在本地安装数据库时都会污染电脑的环境，避免这种情况发生可以采用docker容器的方式来安装mongodb。但在在之前必须安装docker。
 
+在docker中安装mongodb可以参考[附: 用Docker安装mongodb]
+
 ## 添加mongoose
 
 在项目中添加mongoose模块
