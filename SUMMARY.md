@@ -17,6 +17,6 @@
 * [14.存储文章](14-store-post.md)
 * [15.显示文章详情](15-show-post.md)
 * [16.处理markdown](16-markdown.md)
-* [17.设计页面跳转](17-design-pages-jump)
+* [17.设计页面跳转](17-design-pages-jump.md)
 * [附: 用Docker安装mongodb](install-mongodb-from-docker.md)
 * [关于作者](about-author.md)
