@@ -13,7 +13,7 @@ first-app在启动项目时要连接到mongodb数据库。
 
 新建./models/init.js文件
 
-```
+```js
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:32770/firstapp', {
@@ -23,7 +23,7 @@ mongoose.connect('mongodb://localhost:32770/firstapp', {
 
 init.js就是数据库的初始化文件，可以在./app.js文件最开始引入init.js模板。
 
-```
+```js
 // 在初始化app.js最开头就连接数据库
 require('./models/init');
 var express = require('express');
@@ -36,7 +36,7 @@ var express = require('express');
 
 新建./models/post.js文件
 
-```
+```js
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -52,15 +52,15 @@ module.exports = PostModel;
 
 在route.api.js中引入./models/post.js模块
 
-```
+```js
 var PostModel = require('./models/post');
 ```
 
 将数据保存到数据库的post表中
 
-```
-/* POST post content */
-router.post('/posts', function(req, res, next) {
+```js
+/* POST create post */
+router.post('/posts/create', function(req, res, next) {
   var title = req.body.title;
   var content = req.body.content;
 
@@ -75,7 +75,7 @@ router.post('/posts', function(req, res, next) {
 
 获取所有文章列表是从数据库查数据
 
-```
+```js
 /* GET posts lists */
 router.get('/posts', function(req, res, next) {
   PostModel.find({}, {}, function (err, posts) {
@@ -93,7 +93,7 @@ router.get('/posts', function(req, res, next) {
 
 因为postsList是从数据库拉取的对象数组，所以在./views/posts.ejs中要修改以下操作。
 
-```
+```html
 <p v-for="item in postsList">{{ item }}</p>
 
 改成

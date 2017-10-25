@@ -14,9 +14,11 @@ localhost:3000/posts/show?id=123456
 
 在./route.page.js中
 
-```
+```js
 router.get('/posts/show', function (req, res, next) {
-  PostModel.findOne({_id: req.query.id}, function (err, post) {
+  var id = req.query.id;
+
+  PostModel.findOne({_id: id}, function (err, post) {
     res.render('show', {post});
   });
 });
@@ -27,7 +29,7 @@ router.get('/posts/show', function (req, res, next) {
 
 新建show.ejs页面
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -56,7 +58,7 @@ router.get('/posts/show', function (req, res, next) {
 
 在请求数据得到结果后，为每个item加上url字段
 
-```
+```javascript
 <script>
   var vm = new Vue({
     el: '#app',

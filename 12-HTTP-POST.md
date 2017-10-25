@@ -11,7 +11,7 @@
 
 在route.page.js增加路由'/posts/create'的处理
 
-```
+```javascript
 /* GET posts edit page. */
 router.get('/posts/create', function(req, res, next) {
   res.render('create');
@@ -20,7 +20,7 @@ router.get('/posts/create', function(req, res, next) {
 
 新建一个编辑页面create.ejs
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -53,7 +53,7 @@ var vm = new Vue({
   },
   methods: {
     submit () {
-    axios.post('/api/posts',
+    axios.post('/api/posts/create',
       {
         title: vm.title,
         content: vm.content
@@ -76,7 +76,7 @@ axios采用post方法来发送数据，路由地址是'/api/posts'。
 
 在route.api.js中增加路由'api/posts'的post请求处理。
 
-```
+```javascript
 /* POST posts */
 router.post('/posts', function (req, res, next) {
   var title = req.body.title;
@@ -89,14 +89,14 @@ router.post('/posts', function (req, res, next) {
 
 值得注意的一点。
 
-```
+```js
 /* GET posts lists */
 router.get('/posts', function(req, res, next) {
 res.json({postsList: ['文章1', '文章2', '文章3']});
 })
 
 /* POST posts */
-router.post('/posts', function (req, res, next) {
+router.post('/posts/create', function (req, res, next) {
   var title = req.body.title;
   var content = req.body.content;
   res.send({title, content}); // 收到数据后，又把数据返回给了请求方

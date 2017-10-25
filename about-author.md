@@ -1,2 +1,2 @@
 - name: xugaoyang
-- email: xugaoyang01@gmail.com
+- email: i@xugaoyang.com

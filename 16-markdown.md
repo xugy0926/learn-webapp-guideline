@@ -50,15 +50,17 @@ console.log(htmlContent);
 
 #### 在first-app项目中引入marked模块
 
-```
+```js
 var marked = require('marked');
 ```
 
 在res.render页面之前，先把post.content内容转化成html
 
-```
+```js
 router.get('/posts/show', function (req, res, next) {
-  PostModel.findOne({ _id: req.query.id }, function (err, post) {
+  var id = req.query.id;
+
+  PostModel.findOne({ _id: id }, function (err, post) {
     post.content = marked(post.content);
     res.render('show', {post});
   });
@@ -67,7 +69,7 @@ router.get('/posts/show', function (req, res, next) {
 
 post的content内容已经被转换成html了，在show.ejs中要使用&lt;%- %&gt;，而不是&lt;%= %&gt;。&lt;%- %&gt;会内容当初html来显示。
 
-```
+```html
 <div>
   <h1><%= post.title %></h1>
   <div><%- post.content %></div>

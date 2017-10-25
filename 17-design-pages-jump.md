@@ -17,7 +17,7 @@
 ---|---
 [GET] /api/users | 创建项目时自带的功能（暂时留着）
 [GET] /api/posts | 获取文章列表
-[POST] /api/posts | 提交新文章
+[POST] /api/posts/create | 提交新文章
 
 本节将对页面的结构进行串联，已达到更好的用户体验。
 

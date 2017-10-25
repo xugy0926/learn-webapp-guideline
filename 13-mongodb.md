@@ -32,7 +32,7 @@ $ npm install --save mongoose
 
 当本地运行mongodb数据后，nodejs代码要连上去非常容易。四行代码就能搞定。
 
-```
+```js
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/firstapp', {
@@ -48,7 +48,7 @@ mongoose.connect('mongodb://localhost:27017/firstapp', {
 
 ## 定义模型 - 表
 
-```
+```js
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema,
 
@@ -69,7 +69,7 @@ const PostModel = mongoose.model('Post', PostSchema);
 
 #### 增
 
-```
+```js
 var post = new PostModel();
 
 post.title = title;
@@ -82,7 +82,7 @@ post.save(function (err, doc) {
 
 #### 删
 
-```
+```js
 PostModel.remove({_id: postId}, function (err) {
   if (err) handleError(err);
   //removed! success!
@@ -93,7 +93,7 @@ PostModel.remove({_id: postId}, function (err) {
 
 #### 查
 
-```
+```js
 PostModel.find({}, function (err, docs) {
   res.json({ postsList: docs });
 });
@@ -101,7 +101,7 @@ PostModel.find({}, function (err, docs) {
 
 也可以只查制定的一个
 
-```
+```js
 PostModel.findOne({_id: postId}, function (err, doc) {
   res.json({ postsList: docs });
 });
@@ -109,7 +109,7 @@ PostModel.findOne({_id: postId}, function (err, doc) {
 
 #### 改
 
-```
+```js
 PostModel.findOne({_id: postId}, function (err, doc) {
   if (err) handleError(err);
   doc.title = '修改标题';
@@ -118,7 +118,7 @@ PostModel.findOne({_id: postId}, function (err, doc) {
 });
 ```
 
-```
+```js
 PostModel.update({_id: postId}, { title: '修改标题', content: '修改内容'}, function(err, doc) {
   if (err) handleError(err);
   // updated! success!
@@ -129,8 +129,3 @@ PostModel.update({_id: postId}, { title: '修改标题', content: '修改内容'
 
 1. 新增内容，只需要把内容填入即可。
 2. 删、改、查这三个操作必须给定明确的条件，否则无法操作。
-
-## 
-
-
-
