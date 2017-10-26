@@ -1,106 +1,72 @@
-# 添加新的路由和页面
+# 配置执行项目的脚本
 
-一个路由对应一个页面或一个操作，学习如何添加路由和页面是开发WebApp的最基本的能力。
+当修改了first-app的代码后，总是要先停止项目然后再重新启动first-app。
 
-假如想让localhost:3000/posts这个地址打开一个对应的页面。一般都按照以下顺序来操作。
-
-1. 添加一个处理/posts路由的文件。如：./routes/posts.js。
-2. 添加一个/post路由对应的页面文件。如./views/posts.ejs。
-3. 在app.js中将/posts和./routes/posts.js进行关联。
-4. 在./routes/posts.js中把./views/posts.ejs页面返回给用户。
-
-## 新建./routes/posts.js
-
-./routes/post.js用来处理路由逻辑，在这里你可以决定路由/post是返回数据还是页面。
-
-## 新建./views/posts.ejs
-
-./views/post.ejs是用来构建用户看到的html页面。
-
-## 编写./routes/posts.js
-
-只需要把./routes/index.js中的代码copy到./routes/posts.js即可。但是要修改两处内容。
-
-##### 第一处：修改注释。
-
-/routes/posts.js是处理路由’/post‘的逻辑，注释中的Get Home page要修改为Get posts page。这样就保证注释的正确性。当别人看你的代码时，就不会产生误会。
-
-##### 第二处：修改返回的页面
-
-在./routes/index.js中，res.render\(\)函数的第一个参数是’index‘，这个’index‘对应着/views/index.ejs文件。在新建的./routes/posts.js文件中，将res.render\(\)函数的第一个参数'index'修改为'posts'。
-
-## 编写views/posts.ejs的页面代码
-
-把/views/index.ejs的代码copy到/views/posts.ejs文件。
-
-这样重新运行项目，在浏览器输入localhost:3000/posts
-
-## 关联路由'/posts'和'/routes/posts.js'
-
-我们可以顺一下处理逻辑。
-
-* 当浏览器输入地址localhost:3000/，最终代码会执行到routes/index.js中。
-
-* 在routes/index.js中，会把views/index.ejs生产的html页面返回给用户。
-
-以上操作会产生两个疑惑。
-
-1. 程序处理’/‘时，是怎么找到./routes/index.js的？这两者的关联性在哪里？如果知道关联性就能知道如果关联'/post'
-
-2. routes/index.js中的res.render\(\)函数，为什么会把第一个参数‘index’认为是views/index.ejs？关联性在哪里？
-
-在app.js中，引入./routes/post.js文件，并赋值给变量post。
+在终端输入快捷组合键`ctrl + c`停止运行first-app服务，再执行运行指令运行服务。
 
 ```
-var posts = require('./routes/posts');
+输入ctrl + c
+
+$ DEBUG=first-app:* npm start
 ```
 
-然后，将变量posts和路由'/posts'关联起来。
+上面是正常的做法，但很麻烦。我们可以利用supervisor来监听文件被修改后自动重起项目。
+
+#### 全局配置supervisor
+
+安装supervisor模块，一般采用全局安装，这样可以保证在终端的任何地方都可以直接使用supervisor。
 
 ```
-app.use('/posts', posts);
+$ npm isntall -g supervisor
 ```
 
-require\(\)是nodejs的一个全局函数。专门用于引用内部文件（模块）的。一个项目为了保证功能模块更清晰，会将不同的功能写在不同的文件里。比如，./app.js控制路由，./routes/index.js处理某个理由逻辑，当./app.js要调用./routes/index.js时，就必须先将./routes/index.js引入进来。并用赋值给变量index。
-
 ```
-var index = require('./routes/index');
-var posts = require('./routes/posts');
+$ cd first-app
+$ supervisor DEBUG=first-app:* node ./bin/www
 ```
 
-所以，要引入./routes/posts.js文件也是一样的处理。
+相比与全局安装，我更建议你在项目中安装supervisor，两个原因。
+1. 不同的项目可以有不同版本的supervisor。当你下载了一个很老的项目，可能它依赖跟早的superviaor版本，如果此时用了全局安装的supervisor会有问题。
+2. 每个项目的依赖环境越独立，这个项目就更安全、执行更方便。
 
-注意，require\('./routes/posts.js'\)和require\('./routes/posts'\)是等价的。文件的后缀`.js`是可以不写的，写了也不会错。
-
-将一个文件（模块）引入进来后就得使用，否则，引入一个文件（模块）就显得无意义。
-
-app.use\(\)函数可以接受两个参数，第一个参数表示路由，第二个参数表示该路由对应的处理模块。
-
+如果你全局安装了supervisor可以卸载
 ```
-app.use('/posts', posts);
+$ npm uninstall --global supervisor
 ```
 
-通过app.use函数把路由/posts和逻辑处理./routes/posts.js文件关联起来了，整个代码就能走得通。
+#### 在项目中配置supervisor脚本
 
-## 如何让./routes/posts.js返回./views/posts.ejs这个页面
+在first-app项目中安装supervisor.
 
-在./routes/posts.js中，res.render\(\)的第一个参数是'index'，如果把'index'直接改成'posts'是不是就可以了？答案是可以的。那为什么我输入'post'就能关联到'./views/posts.ejs'这个文件呢？
+先进入到first-app文件夹
+```
+$ cd first-app
 
-奥秘是在于在./app.js里，项目已经实现把./views这个路径告诉了app。
+$ npm install --save supervisor
+```
+
+通过npm install安装supervisor时带上--save参数，会把supervisor配置到package.json中。这时可以去package.json中检查dependencies中是否有了如下属性。
 
 ```
-app.set('views', path.join(__dirname, 'views'));
+"supervisor": "^0.12.0"
 ```
 
-app.set\(\)函数可以把一个值设置给app，这行代码的意思就是把./views这个路径设置给'views'这个字符串对应的值。那么，在代码执行时，app只要取出字符串'views'对应的路径即可。
+然后在package.json的script字段中添加一个auto-start脚本
 
-所以，app是预先就知道了如果要找view相关的文件，就去./views的路径下找即可。现在，只需要把./routes/posts.js中的res.render\(\)函数的第一个参数'index'改成'posts'即可。
+```
+"scripts": {
+  "start": "node ./bin/www",
+  "auto-start": "./node_modules/.bin/node-supervisor node ./bin/www"
+},
+```
 
-#### 6. 预览结果
+以上执行成功后，往后只要执行下面指令就可以达到自动重启项目了
 
-重新运行first-app，输入localhost:3000/posts，页面和localhost:3000/一样了就说明成功为first-app添加了一个新的访问路由/posts。
+```
+npm run auto-start
+```
 
 ## 事例
 
-参考事例 [first-app-sample-3](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-3)
+参考事例 [first-app-sample-2](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-2)
 

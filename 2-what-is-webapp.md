@@ -1,58 +1,46 @@
-## 基于Express创建WebAPP
+# 什么是WebApp？
 
-#### 安装express
+WebAPP到底是什么？WebAPP是近年来比较流行的词。
 
-```
-$ npm install -g express-generator@4
-```
+相信大家对网站都很熟悉，我们每天都在浏览网页。网站技术从最早的静态网页发展到可交互的动态网页。在以前只能通过PC浏览器浏览网页，现在还还可以使用手机浏览器，甚至有的手机APP内置了浏览器内核，通过手机App也可以访问网页。
 
--g 是global的意思。表示npm安装express-generator@4时会安装到全局位置。当你打开终端后，可以在任意一个目录下执行express。
+说到手机，大家每天用的微信称为NativeApp。NativeApp是一种基于手机操作系统iOS、Android来开发的应用程序。NatvieApp一般在下载后，在没有网络的情况下也可以在手机上独立运行、计算，比如计算器、音视频播放器，日历、单机版游戏等。NatvieApp有独立的安装包。相对于网站，网页并没有安装包，通过浏览器并输入网址，这个过程是从浏览器发了一个请求给服务器并从服务器获得网址对应的页面，网页绝对依赖于网络。
 
-express-generator@4中的4是版本代号，表示安装版本为4的express。express是从版本1一致演进到版本4。选择版本4是最新版本。
+网页就是HTML页面，传统的HTML页面只能在PC浏览器上运行，在手机上运行显示上会出现格式问题。但是，现在CSS技术的发展足矣保证HTML页面无论是在PC浏览器还是手机浏览器上都能正常显示，加上手机浏览器的手势操作，在手机上操作网页变得非常的简单。
 
-#### 创建一个新的WebApp
+网页在手机上像NativeApp一样显示和操作，从用户的角度网页和NatvieApp的页面似乎没太多差异，更像一个APP。但是光从网页显示形态和手势操作两点并不能增强网页的能力。如今，浏览器技术的发展非常快，通过浏览器提供的能力，网页还能获得设备操作系统很多权限，比如：文件系统权限、摄像头访问权限、音频访问权限、传感器设备权限等等。有了这些操作权限，网页才能像NativeApp一样发挥更多的作用。所以，我们把这种Web技术的应用称为WebApp。
 
-* 进入你任何一个平时工作或学习用的文件夹
+下面比较一下WebApp和NativeApp之间的特点。
 
-```
-$ cd your_work_directory
-```
+1. NatvieApp和WebApp都能在手机上完美显示，NativeApp使用操作系统提供的UI框架构建页面，WebAPP使用HTML和CSS技术构建页面。
 
-* 创建first-app文件夹
+2. NativeAPP的运行依赖设备操作系统，WebAPP依赖浏览器运行。
 
-```
-$ mkdir first-app
-```
+3. NativeAPP有独立的安装包，WebAPP的页面需要从服务端获取并在浏览器运行。
 
-目录first-app就是你的工程文件夹。
+4. NativeAPP在无网络的情况下也可以单机运行，WebAPP没有网络页面都打不开。
 
-* 进入first-app目录
+5. NativeAPP不一定需要server的支持，WebAPP一定需要一个server提供页面和数据。
 
-```
-$ cd first-app
-```
+从开发WebAPP的角度，WebApp包涵两部分，client端和server端。client端提供用户可见的部分 — HTML页面，server端提供用户不可见的部分 — 数据。在技术圈长听到前后端分离的概念，其实指的就是client端和server端的分离，但不管怎么分离，client端一定需要一个server来提供页面，还要有一个server端为client端提供数据。所以，client端和server端分离只是把提供数据的server分离出来而已。
 
-* 在当前目录执行express来创建一个基于Express的WebApp
+> client端需要一个server来提供页面这种行为还可以利用其它一些技术，比如，利用nginx直接返回html文件，apache也可以做到，部署到cdn上也可以做到。这三种技术都比自己运行server返回页面要更快。但弊端就是不够灵活，需要人工手动更新。一般各个公司的主页为了加载更快都采用cdn技术。
 
-```
-$ express --view=ejs
-```
+前后端分离并不是唯一的技术选择，在一些中小型项目前后端还是可以一体的，怎么进行技术选型完全看项目而定。
 
-执行express后，要注意观察输出的信息，特别是install dependencies和run the app的信息。后面会用到。
+当你想独自开发一款WebApp，不管采用哪种技术，所有事情都是你自己干。那开发一个WebApp都要干些什么事呢？
 
-#### 安装first-app的依赖包
+下面通过一些行为来分析开发WebApp都需要做什么？
 
-```
-$ npm install
-```
+1. 处理路由能力。一个网站都会提供多个地址的访问能力，比如[https://xinshengdaxue.com](https://xinshengdaxue.com)可以访问新生大学的主页，[https://web.xinshengdaxue.com/home/lessons](https://web.xinshengdaxue.com/home/lessons)可以访问所有课程页面。一个地址代表一个访问路径，一般称为路由，WebApp必须具备分析不同路由的能力。
 
-#### 运行first-app
+2. 构建页面能力。WebAPP提供页面是最基本的能力，构建HTML就是开发中最重要的工作，也是最繁重的工作。正因为繁重，在技术才才会采用前后端分离的开放模式，提供HTML页面的client端由前端工程师完成，提供数据的server端由服务端工程师完成。
 
-```
-$ DEBUG=first-app:* npm start
-```
+3. 操作浏览器能力。浏览器提供了很多功能，常见的有cookie和storge。cookie和storege都是浏览器的存储技术，利用这些技术可以在浏览器端缓存一些必要的信息。这些技术都可以通过查阅HTML5 API文档获得。
 
-#### 预览结果
+4. 提供页面和数据能力。如果前后端一体化开发时，WebApp的server端必须提供页面和数据，以供client端可以构建丰富的页面，以及存储用户操作带来的变化数据。
 
-浏览器打开 localhost:3000
+5. 持久化数据能力。server端存储数据是基本的能力，一般采用第三方数据库来完成。常用的数据库有mysql，sqlite，mongodb等。开发中小型项目，选择一个最熟悉的数据库即可。
+
+如果想学习开发WebApp，以上5点将是学习的主要方向，至于采取什么形式来构建WebAPP就无所谓了，选择一门感兴趣的技术即可。
 
