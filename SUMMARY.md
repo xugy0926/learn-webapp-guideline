@@ -10,7 +10,7 @@
 * [7.添加新的路由和页面](7-create-new-route-and-page.md)
 * [8.模板引擎](8-ejs-template.md)
 * [9.定制ejs模板](9-use-ejs.md)
-* [10.延迟html渲染时机](10-client-render.md)
+* [10.客户端渲染数据](10-client-render.md)
 * [11.延迟html渲染时机](11-render-timer.md)
 * [12.路由归类](12-route-classified.md)
 * [13.处理HTTP POST请求](13-HTTP-POST.md)
