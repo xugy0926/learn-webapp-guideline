@@ -19,5 +19,6 @@
 * [16.处理markdown](16-markdown.md)
 * [17.设计页面跳转](17-design-pages-jump.md)
 * [18.编辑文章](18-edit-post.md)
+* [19.页面模板](19-views-template.md)
 * [附: 用Docker安装mongodb](install-mongodb-from-docker.md)
 * [关于作者](about-author.md)
