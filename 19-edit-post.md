@@ -35,7 +35,7 @@
 </div>
 ```
 
-#### 增加返回编辑页面逻辑
+#### 增加访问编辑页面逻辑
 
 在 route.page.js 中添加对 /posts/edit的处理。
 
@@ -76,6 +76,28 @@ router.get('/posts/one', function (req, res, next) {
 });
 ```
 
+#### 添加编辑更新某个特定id的文章
+
+使用findOneAndUpdate更新数据，第二个参数 title和content表示要更新的字段。
+
+```js
+/* PATCH edit post */
+router.post('/posts/edit', function(req, res, next) {
+  var id = req.body.id;
+  var title = req.body.title;
+  var content = req.body.content;
+
+  PostModel.findOneAndUpdate({ _id: id }, { title, content }, function(err) {
+    if (err) {
+      res.json({ success: false });
+    } else {
+      res.json({ success: true });
+    }
+  });
+});
+```
+
+
 #### 添加编辑页面
 
 新建 views/edit.ejs, 内容可以从views/create.ejs中拷贝过来。但在 `<script>` 中要做一些调整。
@@ -90,6 +112,8 @@ var postId = '<%= id %>';
 
 Vue初始化是在created()回调中直接抓取文章数据，并把内容给到 Vue的data中的title和content。
 
+修改submit方法，提交并存储更改后的内容，记得把文章id传递过去。
+
 ```js
 created () {
   axios.get('/api/posts/one?id=' + postId)
@@ -100,7 +124,23 @@ created () {
     .catch(function(err) {
       alert(err);
     })
-}
+},
+  methods: {
+    submit () {
+    axios.post('/api/posts/edit',
+      {
+        id: postId,
+        title: vm.title,
+        content: vm.content
+      })
+      .then(function(response) {
+        alert(JSON.stringify(response.data));
+      })
+      .catch(function(err) {
+        alert(err);
+      })
+    }
+  }
 ```
 
 这样就保证html加载时，回去根据id抓取文章内容。
