@@ -11,7 +11,7 @@
 * [8.模板引擎](8-ejs-template.md)
 * [9.定制ejs模板](9-use-ejs.md)
 * [10.客户端渲染数据](10-client-render.md)
-* [11.延迟html渲染时机](11-render-timer.md)
+* [11.渲染时机](11-render-timer.md)
 * [12.路由归类](12-route-classified.md)
 * [13.处理HTTP POST请求](13-HTTP-POST.md)
 * [14.持久化存储 - mongodb](14-mongodb.md)
