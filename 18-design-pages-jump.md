@@ -109,7 +109,7 @@ views/posts.ejs
 
 上面在最外层 `<div>` 中额外增加了一个pull-right，目的是让分列式下拉菜单靠右边显示。
 
-分列式菜单想正确显示，比如引入jquery.js 和 bootstrap.js
+分列式菜单想正确显示，必须引入jquery.js 和 bootstrap.js
 
 ```html
 <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
