@@ -22,6 +22,6 @@
 * [19.编辑文章](19-edit-post.md)
 * [20.页面模板](20-views-template.md)
 * [21.更好的API](21-good-api.md)
-* [22.更好的错误处理](22-good-error.md)
+* [22.更好的结果处理](22-good-result.md)
 * [附: 用Docker安装mongodb](install-mongodb-from-docker.md)
 * [关于作者](about-author.md)
