@@ -23,5 +23,6 @@
 * [20.页面模板](20-views-template.md)
 * [21.更好的API](21-good-api.md)
 * [22.更好的结果处理](22-good-result.md)
+* [23.停下来想一想](23-wait-and-think.md)
 * [附: 用Docker安装mongodb](install-mongodb-from-docker.md)
 * [关于作者](about-author.md)
