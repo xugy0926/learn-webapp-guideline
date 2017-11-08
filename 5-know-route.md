@@ -64,7 +64,7 @@ router.get('/', function(req, res, next) {
 
 把字符串"Express"修改为字符串"my first WebApp"，
 
-在终端输入快捷组合键`ctrl + c`可以停止运行first-app服务。然后，再执行运行指令运行服务。
+在终端输入快捷组合键`ctrl + c`可以停止运行first-app服务。然后，再执行指令运行服务。
 
 ```
 输入ctrl + c
