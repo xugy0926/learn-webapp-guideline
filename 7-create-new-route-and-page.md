@@ -5,17 +5,17 @@
 假如想让localhost:3000/posts这个地址打开一个对应的页面。一般都按照以下顺序来操作。
 
 1. 添加一个处理/posts路由的文件。如：./routes/posts.js。
-2. 添加一个/post路由对应的页面文件。如./views/posts.ejs。
+2. 添加一个/posts路由对应的页面文件。如./views/posts.ejs。
 3. 在app.js中将/posts和./routes/posts.js进行关联。
 4. 在./routes/posts.js中把./views/posts.ejs页面返回给用户。
 
 ## 新建./routes/posts.js
 
-./routes/post.js用来处理路由逻辑，在这里你可以决定路由/post是返回数据还是页面。
+./routes/posts.js用来处理路由逻辑，在这里你可以决定路由/posts是返回数据还是页面。
 
 ## 新建./views/posts.ejs
 
-./views/post.ejs是用来构建用户看到的html页面。
+./views/posts.ejs是用来构建用户看到的html页面。
 
 ## 编写./routes/posts.js
 
@@ -23,7 +23,7 @@
 
 ##### 第一处：修改注释。
 
-/routes/posts.js是处理路由’/post‘的逻辑，注释中的Get Home page要修改为Get posts page。这样就保证注释的正确性。当别人看你的代码时，就不会产生误会。
+/routes/posts.js是处理路由’/posts‘的逻辑，注释中的Get Home page要修改为Get posts page。这样就保证注释的正确性。当别人看你的代码时，就不会产生误会。
 
 ##### 第二处：修改返回的页面
 
@@ -45,11 +45,11 @@
 
 以上操作会产生两个疑惑。
 
-1. 程序处理’/‘时，是怎么找到./routes/index.js的？这两者的关联性在哪里？如果知道关联性就能知道如果关联'/post'
+1. 程序处理’/‘时，是怎么找到./routes/index.js的？这两者的关联性在哪里？如果知道关联性就能知道如果关联'/posts'
 
 2. routes/index.js中的res.render\(\)函数，为什么会把第一个参数‘index’认为是views/index.ejs？关联性在哪里？
 
-在app.js中，引入./routes/post.js文件，并赋值给变量post。
+在app.js中，引入./routes/posts.js文件，并赋值给变量posts。
 
 ```
 var posts = require('./routes/posts');
@@ -84,7 +84,7 @@ app.use('/posts', posts);
 
 ## 如何让./routes/posts.js返回./views/posts.ejs这个页面
 
-在./routes/posts.js中，res.render\(\)的第一个参数是'index'，如果把'index'直接改成'posts'是不是就可以了？答案是可以的。那为什么我输入'post'就能关联到'./views/posts.ejs'这个文件呢？
+在./routes/posts.js中，res.render\(\)的第一个参数是'index'，如果把'index'直接改成'posts'是不是就可以了？答案是可以的。那为什么我输入'posts'就能关联到'./views/posts.ejs'这个文件呢？
 
 奥秘是在于在./app.js里，项目已经实现把./views这个路径告诉了app。
 
