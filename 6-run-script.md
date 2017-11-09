@@ -26,7 +26,7 @@ $ supervisor DEBUG=first-app:* node ./bin/www
 ```
 
 相比与全局安装，我更建议你在项目中安装supervisor，两个原因。
-1. 不同的项目可以有不同版本的supervisor。当你下载了一个很老的项目，可能它依赖跟早的superviaor版本，如果此时用了全局安装的supervisor会有问题。
+1. 不同的项目可以有不同版本的supervisor。当你下载了一个很老的项目，可能它依赖更早的superviaor版本，如果此时用了全局安装的supervisor会有问题。
 2. 每个项目的依赖环境越独立，这个项目就更安全、执行更方便。
 
 如果你全局安装了supervisor可以卸载
@@ -60,7 +60,7 @@ $ npm install --save supervisor
 },
 ```
 
-以上执行成功后，往后只要执行下面指令就可以达到自动重启项目了
+以上执行成功后，往后只要执行下面指令就可以自动重启项目了
 
 ```
 npm run auto-start

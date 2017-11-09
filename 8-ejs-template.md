@@ -1,6 +1,6 @@
 # 模板引擎
 
-在express中，模板引擎也可以称为视图引擎，随便怎么叫。express引入模板引擎的目的是为了更好的构建html页面。还记得在创建first-app项目时的参数吗？
+在express中，模板引擎也可以称为视图引擎，随便怎么叫。express引入模板引擎的目的是为了更好地构建html页面。还记得在创建first-app项目时的参数吗？
 
 ```
 $ express --view=ejs

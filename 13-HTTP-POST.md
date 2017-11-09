@@ -70,7 +70,7 @@ var vm = new Vue({
 </script>
 ```
 
-在这个编辑页面利用vue技术将&lt;input&gt;和&lt;textarea&gt;标签输入的内容和data中的title和content变量进行绑定，提交按钮时间绑定到methods的submit方法。
+在这个编辑页面利用vue技术将&lt;input&gt;和&lt;textarea&gt;标签输入的内容和data中的title和content变量进行绑定，提交按钮事件绑定到methods的submit方法。
 
 axios采用post方法来发送数据，路由地址是'/api/posts'。
 
