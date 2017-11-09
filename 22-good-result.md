@@ -58,6 +58,8 @@ router.get('/posts', function(req, res, next) {
 });
 ```
 
+修改成
+
 ```js
 /* GET posts lists */
 router.get('/posts', function(req, res, next) {
@@ -100,7 +102,7 @@ module.exports = errorHandle;
 然后在 route.api.js中引用该文件
 
 ```js
-var errorHandle = require('./common/errorHandle);
+var errorHandle = require('./common/errorHandle');
 
 /* GET posts lists */
 router.get('/posts', function(req, res, next) {
