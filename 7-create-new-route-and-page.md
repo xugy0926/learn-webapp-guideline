@@ -61,7 +61,7 @@ var posts = require('./routes/posts');
 app.use('/posts', posts);
 ```
 
-require\(\)是nodejs的一个全局函数。专门用于引用内部文件（模块）的。一个项目为了保证功能模块更清晰，会将不同的功能写在不同的文件里。比如，./app.js控制路由，./routes/index.js处理某个理由逻辑，当./app.js要调用./routes/index.js时，就必须先将./routes/index.js引入进来。并用赋值给变量index。
+require\(\)是nodejs的一个全局函数，专门用于引用内部文件（模块）。一个项目为了保证功能模块更清晰，会将不同的功能写在不同的文件里。比如，./app.js控制路由，./routes/index.js处理某个路由逻辑，当./app.js要调用./routes/index.js时，就必须先将./routes/index.js引入进来。并用赋值给变量index。
 
 ```
 var index = require('./routes/index');
