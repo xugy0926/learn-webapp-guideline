@@ -22,7 +22,7 @@ WebAPP到底是什么？WebAPP是近年来比较流行的词。
 
 5. NativeAPP不一定需要server的支持，WebAPP一定需要一个server提供页面和数据。
 
-从开发WebAPP的角度，WebApp包涵两部分，client端和server端。client端提供用户可见的部分 — HTML页面，server端提供用户不可见的部分 — 数据。在技术圈长听到前后端分离的概念，其实指的就是client端和server端的分离，但不管怎么分离，client端一定需要一个server来提供页面，还要有一个server端为client端提供数据。所以，client端和server端分离只是把提供数据的server分离出来而已。
+从开发WebAPP的角度，WebApp包含两部分，client端和server端。client端提供用户可见的部分 — HTML页面，server端提供用户不可见的部分 — 数据。在技术圈常听到前后端分离的概念，其实指的就是client端和server端的分离，但不管怎么分离，client端一定需要一个server来提供页面，还要有一个server端为client端提供数据。所以，client端和server端分离只是把提供数据的server分离出来而已。
 
 > client端需要一个server来提供页面这种行为还可以利用其它一些技术，比如，利用nginx直接返回html文件，apache也可以做到，部署到cdn上也可以做到。这三种技术都比自己运行server返回页面要更快。但弊端就是不够灵活，需要人工手动更新。一般各个公司的主页为了加载更快都采用cdn技术。
 
@@ -36,7 +36,7 @@ WebAPP到底是什么？WebAPP是近年来比较流行的词。
 
 2. 构建页面能力。WebAPP提供页面是最基本的能力，构建HTML就是开发中最重要的工作，也是最繁重的工作。正因为繁重，在技术才才会采用前后端分离的开放模式，提供HTML页面的client端由前端工程师完成，提供数据的server端由服务端工程师完成。
 
-3. 操作浏览器能力。浏览器提供了很多功能，常见的有cookie和storge。cookie和storege都是浏览器的存储技术，利用这些技术可以在浏览器端缓存一些必要的信息。这些技术都可以通过查阅HTML5 API文档获得。
+3. 操作浏览器能力。浏览器提供了很多功能，常见的有cookie和storage。cookie和storage都是浏览器的存储技术，利用这些技术可以在浏览器端缓存一些必要的信息。这些技术都可以通过查阅HTML5 API文档获得。
 
 4. 提供页面和数据能力。如果前后端一体化开发时，WebApp的server端必须提供页面和数据，以供client端可以构建丰富的页面，以及存储用户操作带来的变化数据。
 
