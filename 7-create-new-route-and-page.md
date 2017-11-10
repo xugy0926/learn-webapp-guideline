@@ -45,7 +45,7 @@
 
 以上操作会产生两个疑惑。
 
-1. 程序处理’/‘时，是怎么找到./routes/index.js的？这两者的关联性在哪里？如果知道关联性就能知道如果关联'/posts'
+1. 程序处理’/‘时，是怎么找到./routes/index.js的？这两者的关联性在哪里？如果知道关联性就能知道如何关联'/posts'
 
 2. routes/index.js中的res.render\(\)函数，为什么会把第一个参数‘index’认为是views/index.ejs？关联性在哪里？
 
