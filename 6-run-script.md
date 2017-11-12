@@ -17,7 +17,7 @@ $ DEBUG=first-app:* npm start
 安装supervisor模块，一般采用全局安装，这样可以保证在终端的任何地方都可以直接使用supervisor。
 
 ```
-$ npm isntall -g supervisor
+$ npm install -g supervisor
 ```
 
 ```
