@@ -101,7 +101,7 @@ router.get('/posts', function(req, res, next) {
 <p v-for="item in postsList">{{ item.title }}</p>
 ```
 
-## 事例
+## 实例
 
-参考事例 [first-app-sample-8](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-8)
+参考 [first-app-sample-8](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-8)
 

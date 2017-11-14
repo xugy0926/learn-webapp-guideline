@@ -97,7 +97,7 @@ fetchData () {
 
 通过以上的操作我们把路由重新归类整理了一番，以保证后续能更好的开发功能。
 
-## 事例
+## 实例
 
-参考事例 [first-app-sample-6](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-6)
+参考 [first-app-sample-6](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-6)
 

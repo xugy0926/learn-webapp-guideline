@@ -72,7 +72,7 @@ router.get('/list', function(req, res, next) {
 
 延迟html渲染时机这种技术称为客户端渲染。
 
-## 事例
+## 实例
 
-参考事例 [first-app-sample-5](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-5)
+参考 [first-app-sample-5](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-5)
 

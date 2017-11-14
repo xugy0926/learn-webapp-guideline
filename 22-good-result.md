@@ -269,6 +269,6 @@ submit () {
 
 这也说明了http的post和patch的使用区别，post可能需要服务端返回数据，patch不需要服务端返回数据。
 
-## 事例
+## 实例
 
-参考事例 [first-app-sample-15](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-15)
+参考 [first-app-sample-15](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-15)

@@ -75,7 +75,7 @@ router.get('/posts/show', function (req, res, next) {
 </script>
 ```
 
-## 事例
+## 实例
 
-参考事例 [first-app-sample-9](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-9)
+参考 [first-app-sample-9](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-9)
 

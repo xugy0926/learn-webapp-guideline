@@ -85,7 +85,7 @@ app.use(expressLayouts);
 
 其余页面的修改类似和 views/index.ejs 类似。
 
-## 事例
+## 实例
 
-参考事例 [first-app-sample-13](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-13)
+参考 [first-app-sample-13](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-13)
 

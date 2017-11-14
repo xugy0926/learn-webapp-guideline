@@ -100,7 +100,7 @@ app.set\(\)函数可以把一个值设置给app，这行代码的意思就是把
 
 重新运行first-app，输入localhost:3000/posts，页面和localhost:3000/一样了就说明成功为first-app添加了一个新的访问路由/posts。
 
-## 事例
+## 实例
 
-参考事例 [first-app-sample-3](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-3)
+参考 [first-app-sample-3](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-3)
 

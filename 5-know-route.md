@@ -86,7 +86,7 @@ router.get('/', function(req, res, next) {
 
 将“respond with a resource”修改为“zhangsan, lisi, wangermazi”，重新运行first-app再刷新页面看结果。
 
-## 事例
+## 实例
 
-参考事例 [first-app-sample-1](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-1)
+参考 [first-app-sample-1](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-1)
 

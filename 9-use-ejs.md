@@ -56,7 +56,7 @@ ejs模板文件中可以嵌入代码，但代码一定是写在&lt;% %&gt;中。
 
 ejs模板引擎针对学习者相对很友好，只是看上去有点乱而已。
 
-## 事例
+## 实例
 
-参考事例 [first-app-sample-4](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-4)
+参考 [first-app-sample-4](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-4)
 
