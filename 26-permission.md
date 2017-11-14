@@ -4,7 +4,7 @@
 
 #### 给 post 添加作者 id
 
-数据库中只存储 post 的 title 和 content两个字段，有了账户信息后，可以存储作者的 id。
+数据库中只存储 post 的 title 和 content两个字段，有了账户信息后，可以存储作者的 id。
 
 // filepath: models/post.js
 ```js
