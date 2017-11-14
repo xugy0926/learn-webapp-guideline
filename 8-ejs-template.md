@@ -10,7 +10,7 @@ $ express --view=ejs
 
 项目创建成功后，在.app.js中可以看到以下代码。
 
-```
+```js
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 
 express已经帮我们构建好了查找view的位置和解析view的引擎。当我们要返回页面时，只要告诉res.render函数返回的页面的名字即可。
 
-```
+```js
 res.render('index', { title: 'Express' });
 ```
 

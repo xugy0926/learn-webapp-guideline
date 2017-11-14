@@ -6,7 +6,7 @@ WebApp不仅可以提供页面能力，还能提供数据。
 
 想一下，如果不断增加first-app的页面，在.app.js文中下面的代码将会不断的膨胀。
 
-```
+```js
 app.use('/', index);
 app.use('/users', users);
 app.use('/posts', posts);
@@ -18,7 +18,7 @@ app.use('/posts', posts);
 
 ##### 页面路由
 
-```
+```js
 localhost:3000/      // 获取主页
 localhost:3000/users // 获取users页面
 localhost:3000/posts // 获取posts页面
@@ -26,7 +26,7 @@ localhost:3000/posts // 获取posts页面
 
 ##### 数据路由
 
-```
+```js
 localhost:3000/api/posts  // 获取posts列表
 ```
 
@@ -36,7 +36,7 @@ localhost:3000/api/posts  // 获取posts列表
 
 * route.page.js
 
-```
+```js
 var express = require('express');
 var router = express.Router();
 
@@ -55,7 +55,7 @@ module.exports = router;
 
 * route.api.js
 
-```
+```js
 var express = require('express');
 var router = express.Router();
 
@@ -74,7 +74,7 @@ module.exports = router;
 
 修改app.js的路由和处理文件的对应关系
 
-```
+```js
 var page = require('./route.page');
 var api = require('./route.api');
 
@@ -86,7 +86,7 @@ app.use('/api', api);
 
 因为把'/posts/list'路由改成了'/api/posts'，所以./views/posts.ejs中请求posts数据的url也要修改。
 
-```
+```js
 fetchData () {
   axios.get('/api/posts')
     .then(function(response) {

@@ -14,7 +14,7 @@
 
 在./routes/posts.js中添加一个/posts/list的路由处理
 
-```
+```js
 /* GET 获取postsList数据 */
 router.get('/list', function(req, res, next) {
   res.json({postsList: ['文章1', '文章2', '文章3'] });
@@ -25,7 +25,7 @@ router.get('/list', function(req, res, next) {
 
 在./views/posts.ejs的head部分添加对vue和axios的引用
 
-```
+```html
 <head>
   <title><%= title %></title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -36,7 +36,7 @@ router.get('/list', function(req, res, next) {
 
 在./views/posts.ejs中添加&lt;script&gt;代码来获得postsList并更新页面。
 
-```
+```html
 <script>
   var vm = new Vue({
     el: '#app',
@@ -59,7 +59,7 @@ router.get('/list', function(req, res, next) {
 
 这块代码会在浏览器加载完html后才会执行，所以获取postsList被延迟到浏览器才执行，然后再利用vue更新html的机制来刷新页面。
 
-```
+```html
 <body>
   <div id="app">
     <h1><%= title %></h1>
