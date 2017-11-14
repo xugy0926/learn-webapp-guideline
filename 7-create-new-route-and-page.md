@@ -5,9 +5,9 @@
 假如想让localhost:3000/posts这个地址打开一个对应的页面。一般都按照以下顺序来操作。
 
 1. 添加一个处理/posts路由的文件。如：./routes/posts.js。
-2. 添加一个/posts路由对应的页面文件。如./views/posts.ejs。
-3. 在app.js中将/posts和./routes/posts.js进行关联。
-4. 在./routes/posts.js中把./views/posts.ejs页面返回给用户。
+1. 添加一个/posts路由对应的页面文件。如./views/posts.ejs。
+1. 在app.js中将/posts和./routes/posts.js进行关联。
+1. 在./routes/posts.js中把./views/posts.ejs页面返回给用户。
 
 ## 新建./routes/posts.js
 
@@ -23,7 +23,7 @@
 
 ##### 第一处：修改注释。
 
-/routes/posts.js是处理路由’/posts‘的逻辑，注释中的Get Home page要修改为Get posts page。这样就保证注释的正确性。当别人看你的代码时，就不会产生误会。
+/routes/posts.js是处理路由’/posts‘的逻辑，注释中的Get home page要修改为Get posts page。这样就保证注释的正确性。当别人看你的代码时，就不会产生误会。
 
 ##### 第二处：修改返回的页面
 
@@ -47,17 +47,17 @@
 
 1. 程序处理’/‘时，是怎么找到./routes/index.js的？这两者的关联性在哪里？如果知道关联性就能知道如何关联'/posts'
 
-2. routes/index.js中的res.render\(\)函数，为什么会把第一个参数‘index’认为是views/index.ejs？关联性在哪里？
+1. routes/index.js中的res.render\(\)函数，为什么会把第一个参数‘index’认为是views/index.ejs？关联性在哪里？
 
 在app.js中，引入./routes/posts.js文件，并赋值给变量posts。
 
-```
+```javascript
 var posts = require('./routes/posts');
 ```
 
 然后，将变量posts和路由'/posts'关联起来。
 
-```
+```javascript
 app.use('/posts', posts);
 ```
 
@@ -76,7 +76,7 @@ var posts = require('./routes/posts');
 
 app.use\(\)函数可以接受两个参数，第一个参数表示路由，第二个参数表示该路由对应的处理模块。
 
-```
+```javascript
 app.use('/posts', posts);
 ```
 
@@ -88,7 +88,7 @@ app.use('/posts', posts);
 
 奥秘是在于在./app.js里，项目已经实现把./views这个路径告诉了app。
 
-```
+```javascript
 app.set('views', path.join(__dirname, 'views'));
 ```
 
@@ -103,4 +103,3 @@ app.set\(\)函数可以把一个值设置给app，这行代码的意思就是把
 ## 实例
 
 参考 [first-app-sample-3](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-3)
-
