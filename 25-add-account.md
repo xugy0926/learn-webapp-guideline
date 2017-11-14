@@ -24,8 +24,9 @@
 
 #### 添加存储用户信息的表
 
-新建 models/user.js
+新建用户信息表
 
+// filepath: models/user.js
 ```js
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
@@ -44,8 +45,9 @@ module.exports = UserModel;
 
 #### 定义一个全局的配置文件
 
-新建 config.js
+新建配置文件。
 
+// filepath: config.js
 ```js
 module.exports = {
   cookieName: 'your_cookie_name'
@@ -58,8 +60,9 @@ module.exports = {
 
 #### 增加登录和注册页面
 
-1. 在 route.page.js 中添加新的页面路由处理
+1. 添加新的页面路由处理
 
+// filepath: route.page.js
 ```js
 /* GET signup page. */
 router.get('/signup', function(req, res, next) {
@@ -72,8 +75,9 @@ router.get('/signin', function (req, res, next) {
 });
 ```
 
-2. 新建登录页面 views/signin.ejs 。
+2. 新建登录页面
 
+// filepath: views/signin.ejs
 ```html
 <div class="col-md-4 col-md-offset-4">
   <h1>登录</h1>
@@ -121,10 +125,11 @@ var vm = new Vue({
 </script>
 ```
 
-3. 新建注册页面 views/signup.ejs 。
+3. 新建注册页面
 
 注册页面会比登录页面多一个重复密码的输入，这是为了保证用户在输入新密码时不出错。
 
+// filepath: views/signup.ejs
 ```html
 <div class="col-md-4 col-md-offset-4">
   <h1>登录</h1>
@@ -179,8 +184,9 @@ var vm = new Vue({
 
 #### 添加登录和注册的http请求处理
 
-1. 在 route.api.js 中先引入 3个模块
+1. 引入模块
 
+// filepath: route.api.js
 ```js
 var bcrypt = require('bcrypt');
 var UserModel = require('./models/user');
@@ -191,6 +197,7 @@ var config = require('./config');
 
 2. 处理 api/v1/signup 请求
 
+// filepath: route.api.js
 ```js
 /* POST signup user */
 router.post('/signup', function(req, res, next) {
@@ -221,6 +228,7 @@ router.post('/signup', function(req, res, next) {
 
 3. 处理 api/v1/signin 请求
 
+// filepath: route.api.js
 ```js
 /* POST signin user */
 router.post('/signin', function(req, res, next) {
@@ -264,8 +272,9 @@ opts这个对象里记录了一些cookie的配置信息，这里最重要的是 
 
 每一次http请求，服务都需要判断cookie中的信息，以确保当前发起请求的用户是否是登录状态。
 
-1. 新建一个中间件文件 ./middlewares/auth.js
+1. 新建一个检查登录状态的中间件
 
+// filepath: ./middlewares/auth.js
 ```js
 var config = require('../config');
 var UserModel = require('../models/user');
@@ -297,15 +306,11 @@ authUser函数会把每一个请求的 cookie 数据读出来，因为服务指�
 
 2. 在 app.js 中植入验证用户信息的中间件
 
+// filepath: app.js
 ```js
-...
-
 var auth = require('./middlewares/auth');
 
-...
-
 app.use(auth.authUser);
-
 app.use('/', page);
 app.use('/api/v1', api);
 ```
@@ -314,8 +319,9 @@ app.use('/api/v1', api);
 
 前面我们获取到了登录用户的信息并存在了res.locals.currentUser中。
 
-在构建 ejs 是，可以利用currentUser这个对象来弹性的构建导航条信息。
+可以利用currentUser这个对象来弹性的构建导航条信息。
 
+// filepath: ./views/_nav.ejs
 ```html
 <nav class="navbar navbar-default">
   <div class="container-fluid">
