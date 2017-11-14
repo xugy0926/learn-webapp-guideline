@@ -4,7 +4,7 @@
 
 #### 给 post 添加作者 id
 
-数据库中只存储 post 的 title 和 content两个字段，有了账户信息后，可以存储作者的 id。
+数据库中只存储 post 的 title 和 content 两个字段，有了账户信息后，可以存储作者的 id。
 
 // filepath: models/post.js
 ```js
@@ -24,7 +24,7 @@ const PostModel = mongoose.model('Post', PostSchema);
 module.exports = PostModel;
 ```
 
-在处理 post 请求时，将 res.locals.currentUser._id 的值存到 post的authorId，这样就会把作者的 id 写入到数据库中。
+在处理 post 请求时，将 res.locals.currentUser._id 的值存到 post 的 authorId ，这样就会把作者的 id 写入到数据库中。
 
 // filepath: route.api.js
 ```js
@@ -50,7 +50,7 @@ router.post('/posts', function (req, res, next) {
 
 在 views/posts.ejs 中有一个新建文章的菜单，这里应该限制登录的用户才能创建文章。
 
-判断currentUser变量是否存在，如果存在说明用户是登录状态，才显示创建菜单
+判断 currentUser 变量是否存在，如果存在说明用户是登录状态，才显示创建菜单
 
 // filepath: views/posts.ejs
 ```html
@@ -73,7 +73,7 @@ router.post('/posts', function (req, res, next) {
 
 一般情况下只能登录用户是文章作者才能编辑文章，所以要对编辑菜单进行判断。
 
-判断 currentUser 存在并且 currentUser的 id值和 post 的作者一致才显示编辑惨淡。
+判断 currentUser 存在并且 currentUser 的 id 值和 post 的作者一致才显示编辑惨淡。
 
 // filepath: views/show.ejs
 ```html
@@ -94,7 +94,7 @@ router.post('/posts', function (req, res, next) {
 
 #### 整理配置信息（改善）
 
-将链接mongodb的url写入到config.js中，这样可以更方便管理webapp的各种配置信息。
+将链接 mongodb 的 url 写入到 config.js 中，这样可以更方便管理 webapp 的各种配置信息。
 
 // filepath: config.js
 ```js
