@@ -52,6 +52,12 @@ $ npm install
 $ DEBUG=first-app:* npm start
 ```
 
+window用户
+
+```
+$ set DEBUG=first-app:* npm start
+```
+
 #### 预览结果
 
 浏览器打开 localhost:3000
