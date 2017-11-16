@@ -73,7 +73,7 @@ router.post('/posts', function (req, res, next) {
 
 一般情况下只能登录用户是文章作者才能编辑文章，所以要对编辑菜单进行判断。
 
-判断 currentUser 存在并且 currentUser 的 id 值和 post 的作者一致才显示编辑惨淡。
+判断 currentUser 存在并且 currentUser 的 id 值和 post 的作者一致才显示编辑菜单。
 
 // filepath: views/show.ejs
 ```html
