@@ -67,7 +67,7 @@ router.get('/posts/show', function (req, res, next) {
 });
 ```
 
-post的content内容已经被转换成html了，在show.ejs中要使用&lt;%- %&gt;，而不是&lt;%= %&gt;。&lt;%- %&gt;会内容当初html来显示。
+post的content内容已经被转换成html了，在show.ejs中要使用&lt;%- %&gt;，而不是&lt;%= %&gt;。&lt;%- %&gt;会把内容当成html来显示。
 
 ```html
 <div>
