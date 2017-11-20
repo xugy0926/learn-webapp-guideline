@@ -57,7 +57,7 @@ router.get('/list', function(req, res, next) {
 </script>
 ```
 
-这块代码会在浏览器加载完html后才会执行，所以获取postsList被延迟到浏览器才执行，然后再利用vue更新html的机制来刷新页面。
+在./views/posts.ejs中修改&lt;body&gt;代码;这块代码会在浏览器加载完html后才会执行，所以获取postsList被延迟到浏览器才执行，然后再利用vue更新html的机制来刷新页面。
 
 ```html
 <body>
