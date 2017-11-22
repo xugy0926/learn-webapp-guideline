@@ -73,9 +73,9 @@
 
 文件`./package.json`是整个WebApp的管理依赖包的地方。
 
-> 依赖包：当WebApp需要调用别人已经开发好的模块时，就需要将模块名和版本号写到到package.json里。这个模块就是WebAapp的依赖包，或称为依赖模块。
+> 依赖包：当WebApp需要调用别人已经开发好的模块时，就需要将模块名和版本号写到到package.json里。这个模块就是WebApp的依赖包，或称为依赖模块。
 
-除了管理依赖包，package.json还有WebAapp的名字和版本号信息。
+除了管理依赖包，package.json还有WebApp的名字和版本号信息。
 
 另外，还有一些脚本信息。比如，上一节提到的运行项目的指令。
 
