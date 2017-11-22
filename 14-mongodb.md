@@ -50,7 +50,7 @@ mongoose.connect('mongodb://localhost:27017/firstapp', {
 
 ```js
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema,
+var Schema = mongoose.Schema;
 
 var PostSchema = new Schema({
     title: String,
