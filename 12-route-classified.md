@@ -67,7 +67,7 @@ router.get('/users', function(req, res, next) {
 /* GET posts lists */
 router.get('/posts', function(req, res, next) {
   res.json({postsList: ['文章1', '文章2', '文章3']});
-})
+});
 
 module.exports = router;
 ```
