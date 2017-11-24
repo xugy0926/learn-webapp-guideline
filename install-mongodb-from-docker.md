@@ -3,7 +3,9 @@
 
 Docker是一个应用容器引擎，开发者可以打包他们的应用及依赖包到一个可移植的容器中，也可以实现虚拟化，容器使用沙箱机制，因此不会污染电脑环境。
 
-(https://baike.baidu.com/item/Docker/13344470?fr=aladdin),更准确的定义参见[docker官网](https://www.docker.com/#/production)
+https://baike.baidu.com/item/Docker/13344470?fr=aladdin
+
+更详细的定义参见[docker官网](https://www.docker.com/#/production)
 
 为了更方便的安装和使用Docker，推荐使用Kitematic客户端。
 
