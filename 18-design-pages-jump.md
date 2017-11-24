@@ -61,7 +61,7 @@ views/index.ejs
 
 在巨幕中有一个`<a>`标签，用于跳转到文章列表页面。
 
-#### 需改全局 `<body>` 的背景
+#### 修改全局 `<body>` 的背景
 
 在全局 body 里添加background，给所有页面添加一个背景图片，以保证页面更好看一些。
 
@@ -77,7 +77,7 @@ body {
 
 #### 修改文章列表样式
 
-用 bootstrap种的 [list-group](http://v3.bootcss.com/components/#list-group) 组件来展示文章的列表
+用 bootstrap 中的 [list-group](http://v3.bootcss.com/components/#list-group) 组件来展示文章的列表
 
 views/posts.ejs
 
