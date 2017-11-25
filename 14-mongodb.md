@@ -19,7 +19,7 @@ mongoose官网[http://mongoosejs.com/](http://mongoosejs.com/)
 
 在本地安装数据库时都会污染电脑的环境，避免这种情况发生可以采用docker容器的方式来安装mongodb。但在在之前必须安装docker。
 
-在docker中安装mongodb可以参考[附: 用Docker安装mongodb]
+在docker中安装mongodb可以参考[附: 用Docker安装mongodb][1]
 
 ## 添加mongoose
 
@@ -129,3 +129,6 @@ PostModel.update({_id: postId}, { title: '修改标题', content: '修改内容'
 
 1. 新增内容，只需要把内容填入即可。
 2. 删、改、查这三个操作必须给定明确的条件，否则无法操作。
+
+
+  [1]: https://github.com/xugy0926/learn-webapp-guideline/blob/master/install-mongodb-from-docker.md
