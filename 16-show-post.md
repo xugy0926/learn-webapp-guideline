@@ -15,6 +15,7 @@ localhost:3000/posts/show?id=123456
 在./route.page.js中
 
 ```js
+/* GET posts show page. */
 router.get('/posts/show', function (req, res, next) {
   var id = req.query.id;
 
