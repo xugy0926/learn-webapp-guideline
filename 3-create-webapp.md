@@ -52,7 +52,7 @@ $ npm install
 $ DEBUG=first-app:* npm start
 ```
 
-window用户
+windows用户
 
 ```
 $ set DEBUG=first-app:* npm start
