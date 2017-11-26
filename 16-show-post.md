@@ -12,6 +12,12 @@ localhost:3000/posts/show?id=123456
 
 /posts/show是路由，query参数id是文章的id。
 
+在./route.page.js中引入./models/post.js模块
+
+```js
+var PostModel = require('./models/post');
+```
+
 在./route.page.js中
 
 ```js
