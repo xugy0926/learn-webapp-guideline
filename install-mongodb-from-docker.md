@@ -9,13 +9,13 @@ https://baike.baidu.com/item/Docker/13344470?fr=aladdin
 
 你可能需要安装两个东西。
 
-#### Docker for mac，or Docker for windows
+#### 安装 [Docker for mac] or [Docker for windows]
 
 https://www.docker.com/docker-mac
 
 如果下载不了请参考[百度云盘](http://pan.baidu.com/s/1nvuu6qX)
 
-#### 下载Kitematic
+#### 安装Kitematic
 
 安装Docker后并启动，在Docker的菜单里能看到“kitematic”选项，点击它会提示你下载kitematic。
 
