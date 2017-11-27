@@ -53,7 +53,7 @@ var vm = new Vue({
   },
   methods: {
     submit () {
-    axios.post('/api/posts/create',
+    axios.post('/api/posts',
       {
         title: vm.title,
         content: vm.content
@@ -96,7 +96,7 @@ res.json({postsList: ['文章1', '文章2', '文章3']});
 })
 
 /* POST posts */
-router.post('/posts/create', function (req, res, next) {
+router.post('/posts', function (req, res, next) {
   var title = req.body.title;
   var content = req.body.content;
   res.send({title, content}); // 收到数据后，又把数据返回给了请求方
