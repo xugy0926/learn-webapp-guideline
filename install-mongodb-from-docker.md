@@ -7,20 +7,17 @@ https://baike.baidu.com/item/Docker/13344470?fr=aladdin
 
 更详细的定义参见[docker官网](https://www.docker.com/#/production)
 
-为了更方便的安装和使用Docker，推荐使用Kitematic客户端。
+你可能需要安装两个东西。
 
-Kitematic 作用是方便你在Mac或Windows上使用Docker，是与Docker Toolbox捆绑在一起的传统解决方案
+#### Docker for mac，or Docker for windows
 
-- 可以自动安装设置Docker
-- 提供直观的图形用户界面
-- Kitematic与Docker Machine集成 提供VirtualBox VM，在本地安装Docker引擎
+https://www.docker.com/docker-mac
+
+如果下载不了请参考[百度云盘](http://pan.baidu.com/s/1nvuu6qX)
 
 #### 下载Kitematic
-进入官方[下载链接](https://www.docker.com/products/docker-toolbox)页面，根据您的系统，选择Mac或Windows版本的进行下载
 
- ![](/assets/install-mongodb-1.png)
-
-因为下载比较慢，我存了一份mac版的放在了百度云，有需要的可以[点击链接](http://pan.baidu.com/s/1dFtms0L)下载 密码:`umxh`
+安装Docker后并启动，在Docker的菜单里能看到“kitematic”选项，点击它会提示你下载kitematic。
 
 #### 安装
 
