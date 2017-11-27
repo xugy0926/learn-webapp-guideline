@@ -19,15 +19,9 @@ https://www.docker.com/docker-mac
 
 安装Docker后并启动，在Docker的菜单里能看到“kitematic”选项，点击它会提示你下载kitematic。
 
-#### 安装
-
-下载完成打开一路继续就安装好了。
+ ![](/assets/kitematic.png)
  
- ![](/assets/install-mongodb-2.png)
-
- 安装完毕有显示，左边图标表示 在终端快速启动Docker 右边图标表示 Kitematic Docker的管理工具
-
- 之后你可以在你的应用里找到这两个应用。
+如果下载不了请参考[百度云盘](http://pan.baidu.com/s/1nvuu6qX)
 
 ## 安装mongodb
 
