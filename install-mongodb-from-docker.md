@@ -23,6 +23,14 @@ https://www.docker.com/docker-mac
  
 如果下载不了请参考[百度云盘](http://pan.baidu.com/s/1nvuu6qX)
 
+#### 加速器
+
+都安装完后，下载镜像可能很慢。这时你需要一个加速器。
+
+https://www.daocloud.io/mirror#accelerator-doc
+
+参考链接的配置方式后，下载镜像会飞起来。
+
 ## 安装mongodb
 
 在Kitematic界面搜索mongo
