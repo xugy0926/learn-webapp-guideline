@@ -99,7 +99,7 @@ PostModel.find({}, function (err, docs) {
 });
 ```
 
-也可以只查制定的一个
+也可以只查指定的一个
 
 ```js
 PostModel.findOne({_id: postId}, function (err, doc) {
