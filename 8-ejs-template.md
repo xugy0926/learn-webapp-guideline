@@ -6,7 +6,7 @@
 $ express --view=ejs
 ```
 
-用express创建项目是，后面跟了一个--view参数，它的值是ejs。这个意图很明确：在创建express项目时使用ejs作为模板引擎。
+用express创建项目时，后面跟了一个--view参数，它的值是ejs。这个意图很明确：在创建express项目时使用ejs作为模板引擎。
 
 项目创建成功后，在.app.js中可以看到以下代码。
 
@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 ```
 
-express已经帮我们构建好了查找view的位置和解析view的引擎。当我们要返回页面时，只要告诉res.render函数返回的页面的名字即可。
+express已经帮我们构建好了查找views的位置和解析views的引擎。当我们要返回页面时，只要告诉res.render函数返回的页面的名字即可。
 
 ```js
 res.render('index', { title: 'Express' });
@@ -26,12 +26,12 @@ res.render('index', { title: 'Express' });
 
 ejs本身是一个express之外的第三方库，ejs的目的就是利用ejs模板文件和数据来构建html文件。比如上面的res.render函数其实是调用了ejs引擎，利用index.ejs模板文件和{ title: 'Express'}数据构建html文件，并返回给用户。
 
-在使用模板引擎时，express封装了对ejs引擎的调用，在调用res.render函数返回页面是我们只关注两件事情。
+在使用模板引擎时，express封装了对ejs引擎的调用，在调用res.render函数返回页面时我们只关注两件事情。
 
 1. 用哪个模板？
 2. 给什么数据？
 
-但，除了以上两件事情之外，在开发期间，我们还要来定制ejs模板。
+但，除了以上两件事情之外，在开发期间，我们还要会定制ejs模板。
 
 
 
