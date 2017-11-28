@@ -40,7 +40,7 @@
 
 目录`/public`是WebAPP存放静态资源的地方。这些静态资源包含css文件、浏览器运行的js文件、图片文件等。静态资源不需要设置任何路由就能直接通过链接访问。
 
-比如通过\`[http://localhost:3000/stylesheets/style.css\`](http://localhost:3000/stylesheets/style.css) 可以在浏览器直接读取style.css，这样做的目的是方便浏览器在解析html页面时更方便得获得静态资源。
+比如通过\`[http://localhost:3000/stylesheets/style.css\`](http://localhost:3000/stylesheets/style.css) 可以在浏览器直接读取style.css，这样做的目的是方便浏览器在解析html页面时更方便地获得静态资源。
 
 #### /routes
 
@@ -52,7 +52,7 @@
 
 目录`./routes`是处理所有路由逻辑的地方。
 
-后面详细讲解了什么是路由。
+后面会详细讲解什么是路由。
 
 #### /views
 
