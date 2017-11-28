@@ -10,7 +10,7 @@
 $ DEBUG=first-app:* npm start
 ```
 
-上面是正常的做法，但很麻烦。我们可以利用supervisor来监听文件被修改后自动重起项目。
+上面是正常的做法，但很麻烦。我们可以利用supervisor来监听文件被修改后自动重启项目。
 
 #### 全局配置supervisor
 
@@ -20,14 +20,14 @@ $ DEBUG=first-app:* npm start
 $ npm install -g supervisor
 ```
 
+相比与全局安装，我更建议你在项目中安装supervisor，两个原因。
+1. 不同的项目可以有不同版本的supervisor。当你下载了一个很老的项目，可能它依赖更早的supervisor版本，如果此时用了全局安装的supervisor会有问题。
+2. 每个项目的依赖环境越独立，这个项目就更安全、执行更方便。
+
 ```
 $ cd first-app
 $ supervisor DEBUG=first-app:* node ./bin/www
 ```
-
-相比与全局安装，我更建议你在项目中安装supervisor，两个原因。
-1. 不同的项目可以有不同版本的supervisor。当你下载了一个很老的项目，可能它依赖更早的superviaor版本，如果此时用了全局安装的supervisor会有问题。
-2. 每个项目的依赖环境越独立，这个项目就更安全、执行更方便。
 
 如果你全局安装了supervisor可以卸载
 ```
