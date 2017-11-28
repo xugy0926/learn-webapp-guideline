@@ -8,7 +8,7 @@ $ npm install -g express-generator@4
 
 -g 是global的意思。表示npm安装express-generator@4时会安装到全局位置。当你打开终端后，可以在任意一个目录下执行express。
 
-express-generator@4中的4是版本代号，表示安装版本为4的express。express是从版本1一致演进到版本4。选择版本4是最新版本。
+express-generator@4中的4是版本代号，表示安装版本为4的express。express是从版本1一直演进到版本4。选择版本4是最新版本。
 
 #### 创建一个新的WebApp
 
