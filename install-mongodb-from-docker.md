@@ -19,9 +19,9 @@ https://www.docker.com/docker-mac
 
 道云在后面的设置加速器时会提到。你可以先根据需要安装。
 
-| Mac用户                                    | Windows用户                                | Docker Toolbox                           |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| [下载Docker for Mac](https://get.daocloud.io/docker-install/mac) | [下载Docker for Windows](https://get.daocloud.io/docker-install/windows) | [下载Docker Toolbox](https://get.daocloud.io/toolbox/) |
+| Mac用户                                    | Windows用户                                | 
+| ---------------------------------------- | ---------------------------------------- | 
+| [下载Docker for Mac](https://get.daocloud.io/docker-install/mac) | [下载Docker for Windows](https://get.daocloud.io/docker-install/windows) 
 
 
 
