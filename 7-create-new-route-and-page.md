@@ -61,7 +61,7 @@ var posts = require('./routes/posts');
 app.use('/posts', posts);
 ```
 
-require\(\)是nodejs的一个全局函数，专门用于引用内部文件（模块）。一个项目为了保证功能模块更清晰，会将不同的功能写在不同的文件里。比如，./app.js控制路由，./routes/index.js处理某个路由逻辑，当./app.js要调用./routes/index.js时，就必须先将./routes/index.js引入进来。并用赋值给变量index。
+require\(\)是node.js的一个全局函数，专门用于引用内部文件（模块）。一个项目为了保证功能模块更清晰，会将不同的功能写在不同的文件里。比如，./app.js控制路由，./routes/index.js处理某个路由逻辑，当./app.js要调用./routes/index.js时，就必须先将./routes/index.js引入进来，并赋值给变量index。
 
 ```
 var index = require('./routes/index');
@@ -86,7 +86,7 @@ app.use('/posts', posts);
 
 在./routes/posts.js中，res.render\(\)的第一个参数是'index'，如果把'index'直接改成'posts'是不是就可以了？答案是可以的。那为什么我输入'posts'就能关联到'./views/posts.ejs'这个文件呢？
 
-奥秘是在于在./app.js里，项目已经实现把./views这个路径告诉了app。
+奥秘在./app.js里，项目已经事先把./views这个路径告诉给app。
 
 ```javascript
 app.set('views', path.join(__dirname, 'views'));
@@ -94,7 +94,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.set\(\)函数可以把一个值设置给app，这行代码的意思就是把./views这个路径设置给'views'这个字符串对应的值。那么，在代码执行时，app只要取出字符串'views'对应的路径即可。
 
-所以，app是预先就知道了如果要找view相关的文件，就去./views的路径下找即可。现在，只需要把./routes/posts.js中的res.render\(\)函数的第一个参数'index'改成'posts'即可。
+所以，app是预先就知道了如果要找views相关的文件，就去./views的路径下找即可。现在，只需要把./routes/posts.js中的res.render\(\)函数的第一个参数'index'改成'posts'即可。
 
 #### 6. 预览结果
 
