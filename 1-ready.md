@@ -1,6 +1,6 @@
 # 准备
 
-本指导书将以Node为开发环境讲解如何开发WebAapp，在学习之前需要安装NVM和Node.js。
+本指导书将以Node为开发环境讲解如何开发WebAap，在学习之前需要安装NVM和Node.js。
 
 #### 1. 安装NVM
 
