@@ -53,7 +53,7 @@ https://www.daocloud.io/mirror#accelerator-doc
 
 重新打开<https://www.daocloud.io/mirror#accelerator-doc#accelerator-doc>翻到刚才的位置，就看到如何加速器地址和设置方法。
 
-每个用户都有自己专用的加速地址，以下例子的地址可能对你并不可用。因此请你使用自己的账号对应的加速器地址，mac用户和Windows用户，请优先使用docker for Mac 和 docker for Windows 配置，docker-toolbox加速器设置是你最后的选择.docker-toolbox配置请看[看这里](http://guide.daocloud.io/dcs/daocloud-9153151.html#docker-toolbox)，你可以优先看下面的配置方法。
+每个用户都有自己专用的加速地址，以下例子的地址可能对你并不可用。因此请你使用自己的账号对应的加速器地址，mac用户和Windows用户，请优先使用docker for Mac 和 docker for Windows 配置。
 
 #### MacOS用户加速器设置
 
