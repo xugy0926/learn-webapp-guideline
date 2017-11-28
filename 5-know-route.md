@@ -53,7 +53,7 @@ app.use(function(req, res, next) {
 
 ## 路由和逻辑处理
 
-路由`/`对应的逻辑模块是routes/index.js。一般情况下`/`路由对应的页面成为首页（或主页）。
+路由`/`对应的逻辑模块是routes/index.js。一般情况下`/`路由对应的页面称为首页（或主页）。
 
 ```
 /* GET home page. */
