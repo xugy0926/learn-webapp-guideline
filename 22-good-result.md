@@ -43,7 +43,7 @@ app.use(function(err, req, res, next) {
 
 #### 修改数据返回的错误
 
-考 {success: false} 或者 { success: true} 来区分是否存在错误逻辑似乎不是特别的好。
+靠 {success: false} 或者 { success: true} 来区分是否存在错误逻辑似乎不是特别的好。
 
 我们可以借助这个统一的错误中枢来统一处理所有的错误。
 
