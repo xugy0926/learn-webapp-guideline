@@ -20,6 +20,8 @@ webapp提供的页面和数据能力是有限的。当客户端发起了一个�
 在前面的小节中，我们知道在 app.js中有统一的错误处理。
 
 ```js
+// filepath: app.js
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -46,6 +48,8 @@ app.use(function(err, req, res, next) {
 我们可以借助这个统一的错误中枢来统一处理所有的错误。
 
 ```js
+// filepath: route.api.js
+
 /* GET posts lists */
 router.get('/posts', function(req, res, next) {
   PostModel.find({}, {}, function(err, posts) {
@@ -61,6 +65,8 @@ router.get('/posts', function(req, res, next) {
 修改成
 
 ```js
+// filepath: route.api.js
+
 /* GET posts lists */
 router.get('/posts', function(req, res, next) {
   PostModel.find({}, {}, function(err, posts) {
@@ -75,46 +81,49 @@ router.get('/posts', function(req, res, next) {
 ```
 我们在err对象中加入status = 500，并把错误送给错误中枢统一返回给用户。
 
-其他路由修改参考上面的样子。
-
-似乎每个错误都有下面相面的代码。
+其实在 app.js 中的错误处理，如果你不主动设置 `err.status = 500`, 它会主动帮默认填上500
 
 ```js
-if (err) {
-  err.status = 500;
+// filepath: app.js
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
   next(err);
-}
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  // 如果不设置err.status，或默认设置为500
+  res.status(err.status || 500);
+  res.render('error');
+});
 ```
 
-为了更好的管理错误处理，我们可以把错误抽离出来，以供不同的路由逻辑来调用。
-
-新建 common/errorHandle.js 文件
+因此，可以省略状态码的设置。
 
 ```js
-var errorHandle = function (err, next) {
-  err.status = 500;
-  next(err);
-}
-
-module.exports = errorHandle;
-```
-
-然后在 route.api.js中引用该文件
-
-```js
-var errorHandle = require('./common/errorHandle');
+// filepath: route.api.js
 
 /* GET posts lists */
 router.get('/posts', function(req, res, next) {
   PostModel.find({}, {}, function(err, posts) {
     if (err) {
-      errorHandle(err, next);
+      next(err);
     } else {
       res.json({ postsList: posts });
     }
   });
 });
 ```
+
+其他路由修改参考上面的样子。
 
 #### 修改客户端（接受结果）的处理
 
