@@ -126,7 +126,7 @@ axios.post('/api/v1/signin',
 
 最后，重复本文开头的操作。你会获得以下友好提示。
 
-![](assets/error-1.png)
+![](assets/error-2.png)
 
 ## 实例
 
