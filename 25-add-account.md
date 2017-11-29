@@ -215,7 +215,7 @@ router.post('/signup', function(req, res, next) {
   user.pass = bcrypt.hashSync(pass, 10);
   user.save(function(err) {
     if (err) {
-      errorHandle(err, next);
+      next(err);
     } else {
       res.end();
     }
@@ -238,11 +238,11 @@ router.post('/signin', function(req, res, next) {
 
   UserModel.findOne({ name }, function(err, user) {
     if (err || !user) {
-      return errorHandle(new Error('找不到用户'), next);
+      return next(new Error('找不到用户'));
     } else {
       var isOk = bcrypt.compareSync(pass, user.pass);
       if (!isOk) {
-        return errorHandle(new Error('密码不对'), next);
+        return next(new Error('密码不对'));
       }
 
       var authToken = user._id;
