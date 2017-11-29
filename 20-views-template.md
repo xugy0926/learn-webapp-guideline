@@ -83,7 +83,7 @@ app.use(expressLayouts);
 </div>
 ```
 
-其余页面的修改类似和 views/index.ejs 类似。
+其余页面的修改和 views/index.ejs 类似。
 
 ## 实例
 
