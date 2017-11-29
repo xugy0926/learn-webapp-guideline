@@ -111,10 +111,14 @@ http://www.ruanyifeng.com/blog/2014/05/restful_api.html
 
 最后，别忘了修改 app.js:
 
+```js
+app.use('/api', api);
 ```
-- app.use('/api', api);
 
-+ app.use('/api/v1', api);
+修改为
+
+```js
+app.use('/api/v1', api);
 ```
 
 ## 实例
