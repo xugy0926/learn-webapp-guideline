@@ -39,7 +39,7 @@ router.post('/posts', function (req, res, next) {
   post.authorId = res.locals.currentUser._id;
   post.save(function(err, doc) {
     if (err) {
-      errorHandle(err, next);
+      next(err);
     } else {
       res.json({ post: doc });
     }
