@@ -301,7 +301,7 @@ function authUser(req, res, next) {
 module.exports = { authUser };
 ```
 
-authUser 函数会把每一个请求的 cookie 数据读出来，因为服务指导 cookie 里存了什么，所以，在这里把读出来的值直接取数据库查用户信息即可。
+authUser 函数会把每一个请求的 cookie 数据读出来，因为服务知道 cookie 里存了什么，所以，在这里把读出来的值直接取数据库查用户信息即可。
 
 查到的用户信息存在 res.locals.currentUser中。为什么存在这里？为了在视图引擎在处理 ejs 时能读到登录的用户信息。
 
