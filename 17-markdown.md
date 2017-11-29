@@ -48,7 +48,7 @@ console.log(htmlContent);
 
 以上是官方给出的例子。
 
-#### 在first-app项目中引入marked模块
+#### 在first-app项目route.page.js中引入marked模块
 
 ```js
 var marked = require('marked');
