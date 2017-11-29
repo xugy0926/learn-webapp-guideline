@@ -27,6 +27,7 @@
 * [24.添加导航条](24-add-navigationbar.md)
 * [25.添加账户系统](25-add-account.md)
 * [26.权限控制](26-permission.md)
+* [27.更好的错误中枢](27-good-error-handle.md)
 * [附: 用Docker安装mongodb](install-mongodb-from-docker.md)
 * [关于作者](about-author.md)
 
