@@ -86,7 +86,7 @@ router.get('/posts', function(req, res, next) {
 
     res.json({ success: true, postsList: posts });
   });
-})
+});
 ```
 
 至此，从用户发送提交文章请求到保存到数据库的通路就完成了。而且api/posts路由会从数据库拉取文章列表并返回给用户。
