@@ -10,7 +10,7 @@ $ npm install -g express-generator@4
 
 express-generator@4 中的 4 是版本代号，表示安装版本为 4.x。目前，Express 的 4.x 是最新的版本。
 
-#### 创建一个新的 WebAPP
+#### 创建一个新的 WebAPP
 
 * 进入你任何一个平时工作或学习用的文件夹
 
