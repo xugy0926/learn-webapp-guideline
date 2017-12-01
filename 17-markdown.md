@@ -57,6 +57,7 @@ var marked = require('marked');
 在res.render页面之前，先把post.content内容转化成html
 
 ```js
+/* GET posts show page. */
 router.get('/posts/show', function (req, res, next) {
   var id = req.query.id;
 
