@@ -100,5 +100,5 @@ curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://49e8d00f
 
  ![](/assets/install-mongodb-5.png)
 
- 右边出现的端口就是你在程序中要用的，每个人端口可能不一样。
+ 右边出现的端口就是你在程序中要用的，每个人端口可能不一样。如果端口不对，启动 WebAPP 时会连不上从而会报错。
 
