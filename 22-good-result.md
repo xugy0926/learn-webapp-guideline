@@ -1,6 +1,6 @@
 # 更好的结果处理
 
-在route.api.js中，我们利用 res.json 方法来响应请求并返回结果数据。
+在 route.api.js 中，我们利用 res.json() 方法来响应请求并返回结果数据。
 
 ```
 res.json({ success: false });
@@ -10,14 +10,14 @@ res.json({ success: true, postsList: posts });
 
 在处理结果时，我们将错误分为两类。
 
-1. webapp不提供的能力。
-2. webapp自身的逻辑错误。
+1. WebAPP 不提供的能力。
+2. WebAPP 自身的逻辑错误（或数据库发生的错误）。
 
-#### webapp不提供的能力
+#### WebAPP 不提供的能力
 
-webapp提供的页面和数据能力是有限的。当客户端发起了一个不存在的路由访问，势必拿不到页面或者数据。
+WebAPP 提供的页面和数据能力是有限的。当客户端发起了一个不存在的路由访问，势必拿不到页面或者数据。
 
-在前面的小节中，我们知道在 app.js中有统一的错误处理。
+在前面的小节中，我们知道在 app.js 中有统一的错误处理。
 
 ```js
 // filepath: app.js
@@ -43,7 +43,9 @@ app.use(function(err, req, res, next) {
 
 #### 修改数据返回的错误
 
-靠 {success: false} 或者 { success: true} 来区分是否存在错误逻辑似乎不是特别的好。
+通过 {success: false} 或者 { success: true} 来区分是否存在错误逻辑似乎不是特别的好。
+
+在 HTTP 请求是，响应中都会默认有一个 status 参数，成为状态码，如果状态码不为 2xx，就表明错误处理错误。为什么不用 res.status 返回500的方式呢？
 
 我们可以借助这个统一的错误中枢来统一处理所有的错误。
 
@@ -79,9 +81,9 @@ router.get('/posts', function(req, res, next) {
   });
 });
 ```
-我们在err对象中加入status = 500，并把错误送给错误中枢统一返回给用户。
+我们在err对象中加入 status = 500，并把错误送给错误中枢统一返回给用户。
 
-其实在 app.js 中的错误处理，如果你不主动设置 `err.status = 500`, 它会主动帮默认填上500
+其实在 app.js 中的错误处理，如果你不主动设置 `err.status = 500`, 它会主动帮默认设置为 500。
 
 ```js
 // filepath: app.js
@@ -106,7 +108,7 @@ app.use(function(err, req, res, next) {
 });
 ```
 
-因此，可以省略状态码的设置。
+因此，可以省略状态码的设置，直接调用 next(err)。
 
 ```js
 // filepath: route.api.js
@@ -127,7 +129,7 @@ router.get('/posts', function(req, res, next) {
 
 #### 修改客户端（接受结果）的处理
 
-在此前，posts.ejs中获取数据是如下处理
+在此前，posts.ejs 中获取数据是如下处理
 
 ```js
 fetchData () {
@@ -145,10 +147,6 @@ fetchData () {
 fetchData () {
   axios.get('/api/v1/posts')
     .then(function(response) {
-      if (response.status !== 200) {
-        throw new Error('error!');
-      }
-
       return response.data;
     })
     .then(function(data) {
@@ -160,12 +158,11 @@ fetchData () {
     })
 }
 ```
+axios.get() 发起一个 get 请求，如果返回的状态码不是 2xx，就会抛出一个异常并执行 catch() 函数。
 
-第一个then函数会处理status不为200的场合并抛出一个异常（只要状态不是200就全认为是处理错误）。
+以下是 [axios 文档](https://github.com/axios/axios#handling-errors)给出的说明。
 
-如果状态是200，就把reponse中的data给第二个then函数。
-
-then函数时promise用法中的重要环节，简明说明请参考[点这里](http://code.7xinsheng.com/post/59d3b0dbfbbefc4e650f4c0d)
+> The request was made and the server responded with a status code that falls out of the range of 2xx
 
 在views文件夹其他页面中获取数据的处理请参考上面的案例修改。
 
@@ -190,7 +187,7 @@ router.post('/posts', function(req, res, next) {
   post.content = content;
   post.save(function(err, doc) {
     if (err) {
-      errorHandle(err, next);
+      next(err);
     } else {
       res.json({post: doc}); // 注意这里
     }
@@ -210,10 +207,6 @@ submit () {
       content: vm.content
     })
     .then(function(response) {
-      if (response.status !== 200) {
-        throw new Error('error!');
-      }
-
       return response.data;
     })
     .then(function(data) {
@@ -240,7 +233,7 @@ router.patch('/posts/:id', function(req, res, next) {
 
   PostModel.findOneAndUpdate({ _id: id }, { title, content }, function(err) {
     if (err) {
-      errorHandle(err, next);
+      next(err);
     } else {
       res.json({}); // 不需要返回文章数据
     }
@@ -259,10 +252,6 @@ submit () {
       content: vm.content
     })
     .then(function(response) {
-      if (response.status !== 200) {
-        throw new Error('error!');
-      }
-
       return response.data;
     })
     .then(function(data) {
