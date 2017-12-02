@@ -107,10 +107,6 @@ axios.post('/api/v1/signin',
     pass: vm.pass
   })
   .then(function(response) {
-    if (response.status !== 200) {
-      throw new Error('error!');
-    }
-
     return response.data;
   })
   .then(function(data) {
