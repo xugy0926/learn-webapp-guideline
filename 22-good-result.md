@@ -45,7 +45,7 @@ app.use(function(err, req, res, next) {
 
 通过 {success: false} 或者 { success: true} 来区分是否存在错误逻辑似乎不是特别的好。
 
-在 HTTP 请求是，响应中都会默认有一个 status 参数，成为状态码，如果状态码不为 2xx，就表明错误处理错误。为什么不用 res.status 返回500的方式呢？
+在 HTTP 请求是，响应中都会默认有一个 status 参数，称为状态码，如果状态码不为 2xx，就表明错误处理错误。为什么不用 res.status 返回500的方式呢？
 
 我们可以借助这个统一的错误中枢来统一处理所有的错误。
 
@@ -242,7 +242,7 @@ router.patch('/posts/:id', function(req, res, next) {
 ```
 
 因为编辑是对一个已经在数据库中的数据进行编辑，客户端自身有这条数据的id。
-所以，在 ./views/edit.ejs中，主需要用本地已经有的id来进行页面跳转。
+所以，在 ./views/edit.ejs中，只需要用本地已经有的id来进行页面跳转。
 
 ```js
 submit () {
