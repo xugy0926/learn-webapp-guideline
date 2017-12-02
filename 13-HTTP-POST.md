@@ -12,7 +12,7 @@
 在route.page.js增加路由'/posts/create'的处理
 
 ```javascript
-/* GET posts edit page. */
+/* GET posts create page. */
 router.get('/posts/create', function(req, res, next) {
   res.render('create');
 });
