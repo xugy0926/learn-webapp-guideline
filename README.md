@@ -29,6 +29,7 @@
 * [26.权限控制](26-permission.md)
 * [27.更好的错误中枢](27-good-error-handle.md)
 * [附: 用Docker安装mongodb](install-mongodb-from-docker.md)
+* [附：漂亮地显示文章](pretty-post.md)
 * [关于作者](about-author.md)
 
 # 介绍
