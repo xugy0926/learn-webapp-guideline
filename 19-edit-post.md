@@ -108,7 +108,7 @@ router.post('/posts/edit', function(req, res, next) {
 var postId = '<%= id %>';
 ```
 
-> 在`<script>`中要利用res.render传过来的变量，一样是使用<%= %>标签，在解释是会直接把id的值替换上去。
+> 在`<script>`中要利用res.render传过来的变量，一样是使用<%= %>标签，在解释时会直接把id的值替换上去。
 
 Vue初始化是在created()回调中直接抓取文章数据，并把内容给到 Vue的data中的title和content。
 
@@ -143,7 +143,7 @@ created () {
   }
 ```
 
-这样就保证html加载时，回去根据id抓取文章内容。
+这样就保证html加载时，会去根据id抓取文章内容。
 
 ## 实例
 
