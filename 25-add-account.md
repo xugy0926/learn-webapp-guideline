@@ -260,6 +260,15 @@ module.exports = router;
 
 opts 这个对象里记录了一些 cookie 的配置信息，这里最重要的是 maxAge 这个属性，它告诉浏览器，这个 cookie 只能有效多长时间。
 
+4. 为了使res.cookie()正确工作还需进一步设置中间间
+
+// filepath: app.js
+```js
+var config = require('./config'); // 添加
+
+app.use(cookieParser(config.cookieName)); // 修改
+```
+
 
 #### 判断每一个 HTTP 请求的cookie信息
 
