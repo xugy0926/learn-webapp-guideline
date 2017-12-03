@@ -128,7 +128,7 @@ var vm = new Vue({
 // filepath: views/signup.ejs
 ```html
 <div class="col-md-4 col-md-offset-4">
-  <h1>登录</h1>
+  <h1>注册</h1>
   <div class="form-group">
     <input type="text" class="form-control" v-model="name" placeholder="账号">
   </div>
