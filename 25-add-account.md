@@ -26,8 +26,9 @@
 
 新建用户信息表
 
-// filepath: models/user.js
 ```js
+// filepath: models/user.js
+
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -47,8 +48,9 @@ module.exports = UserModel;
 
 新建配置文件。
 
-// filepath: config.js
 ```js
+// filepath: config.js
+
 module.exports = {
   cookieName: 'your_cookie_name'
 }
@@ -62,8 +64,9 @@ module.exports = {
 
 1. 添加新的页面路由处理
 
-// filepath: route.page.js
 ```js
+// filepath: route.page.js
+
 /* GET signup page. */
 router.get('/signup', function(req, res, next) {
   res.render('signup');
@@ -77,8 +80,9 @@ router.get('/signin', function (req, res, next) {
 
 2. 新建登录页面
 
-// filepath: views/signin.ejs
 ```html
+// filepath: views/signin.ejs
+
 <div class="col-md-4 col-md-offset-4">
   <h1>登录</h1>
   <div class="form-group">
@@ -125,8 +129,9 @@ var vm = new Vue({
 
 注册页面会比登录页面多一个重复密码的输入，这是为了保证用户在输入新密码时不出错。
 
-// filepath: views/signup.ejs
 ```html
+// filepath: views/signup.ejs
+
 <div class="col-md-4 col-md-offset-4">
   <h1>注册</h1>
   <div class="form-group">
@@ -179,8 +184,9 @@ var vm = new Vue({
 1. 安装 bcrypt 并引入模块
 `$ npm install --save bcrypt`
 
-// filepath: route.api.js
 ```js
+// filepath: route.api.js
+
 var bcrypt = require('bcrypt');
 var UserModel = require('./models/user');
 var config = require('./config');
@@ -190,8 +196,9 @@ var config = require('./config');
 
 2. 处理 api/v1/signup 请求
 
-// filepath: route.api.js
 ```js
+// filepath: route.api.js
+
 /* POST signup user */
 router.post('/signup', function(req, res, next) {
   var name = req.body.name;
@@ -221,8 +228,9 @@ router.post('/signup', function(req, res, next) {
 
 3. 处理 api/v1/signin 请求
 
-// filepath: route.api.js
 ```js
+// filepath: route.api.js
+
 /* POST signin user */
 router.post('/signin', function(req, res, next) {
   var name = req.body.name || '';
@@ -262,8 +270,9 @@ opts 这个对象里记录了一些 cookie 的配置信息，这里最重要的�
 
 4. 为了使res.cookie()正确工作还需进一步设置中间间
 
-// filepath: app.js
 ```js
+// filepath: app.js
+
 var config = require('./config'); // 添加
 
 app.use(cookieParser(config.cookieName)); // 修改
@@ -276,8 +285,9 @@ app.use(cookieParser(config.cookieName)); // 修改
 
 1. 新建一个检查登录状态的中间件
 
-// filepath: ./middlewares/auth.js
 ```js
+// filepath: ./middlewares/auth.js
+
 var config = require('../config');
 var UserModel = require('../models/user');
 
@@ -308,8 +318,9 @@ authUser 函数会把每一个请求的 cookie 数据读出来，因为服务知
 
 2. 植入验证用户信息的中间件
 
-// filepath: app.js
 ```js
+// filepath: app.js
+
 var auth = require('./middlewares/auth');
 
 app.use(auth.authUser);
@@ -323,8 +334,9 @@ app.use('/api/v1', api);
 
 可以利用 currentUser 这个对象来弹性的构建导航条信息。
 
-// filepath: ./views/_nav.ejs
 ```html
+// filepath: ./views/_nav.ejs
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
