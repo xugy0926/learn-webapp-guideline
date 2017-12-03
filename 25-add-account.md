@@ -128,7 +128,7 @@ var vm = new Vue({
 // filepath: views/signup.ejs
 ```html
 <div class="col-md-4 col-md-offset-4">
-  <h1>登录</h1>
+  <h1>注册</h1>
   <div class="form-group">
     <input type="text" class="form-control" v-model="name" placeholder="账号">
   </div>
@@ -259,6 +259,15 @@ module.exports = router;
 上面把 `user._id` 当做 token 存在了 res.cookie 里。这里的核心是 res.cookie() 这个函数，它可以往 reponse 响应体内存入 cookie 信息以便浏览器能获得里面的信息。
 
 opts 这个对象里记录了一些 cookie 的配置信息，这里最重要的是 maxAge 这个属性，它告诉浏览器，这个 cookie 只能有效多长时间。
+
+4. 为了使res.cookie()正确工作还需进一步设置中间间
+
+// filepath: app.js
+```js
+var config = require('./config'); // 添加
+
+app.use(cookieParser(config.cookieName)); // 修改
+```
 
 
 #### 判断每一个 HTTP 请求的cookie信息
