@@ -197,7 +197,7 @@ router.post('/posts', function(req, res, next) {
 
 一般情况下，新创建的数据需要返回给客户端一份，为什么呢？因为写入到数据库后会给这条数据产生一个唯一的id，而客户端拿到这个id可以进行一些交互操作。
 
-比如，在 .views/create.js中
+比如，在 .views/create.ejs中
 
 ```js
 submit () {
