@@ -20,7 +20,7 @@
 
 每次往服务发 HTTP 请求时，浏览器里的 Cookie 都会被默认带上，服务器收到请求第一件事就是分析 Cookie 信息并判断该用户是否存在，如果存在就认为该用户是登录的。
 
-虽然 cookie 最终存在浏览器里，但 Cookie 信息不能人为串改的。写入到浏览器的 Cookie 信息和分析 Cookie 都是由服务来进行。
+虽然 Cookie 最终存在浏览器里，但 Cookie 信息是不能人为篡改的。写入到浏览器的 Cookie 信息和分析 Cookie 都是由服务来进行。
 
 #### 添加存储用户信息的表
 
@@ -56,7 +56,7 @@ module.exports = {
 }
 ```
 
-存在 cookie 里的信息一定需要一个名字。
+存在 Cookie 里的信息一定需要一个名字。
 
 为了更好的管理，设计一个 config.js 来管理 WebAPP 中更多的静态信息。比如：后面可以把数据库的 URL 在这里定义。
 
@@ -264,11 +264,11 @@ module.exports = router;
 
 验证登录信息，要把用户输入的账号和密码与数据库里的账号和密码进行比较，如果一致，表明是一个已经注册过的用户。
 
-上面把 `user._id` 当做 token 存在了 res.cookie 里。这里的核心是 res.cookie() 这个函数，它可以往 reponse 响应体内存入 cookie 信息以便浏览器能获得里面的信息。
+上面把 `user._id` 当做 token 存在了 res.cookie 里。这里的核心是 res.cookie() 这个函数，它可以往 reponse 响应体内存入 Cookie 信息以便浏览器能获得里面的信息。
 
-opts 这个对象里记录了一些 cookie 的配置信息，这里最重要的是 maxAge 这个属性，它告诉浏览器，这个 cookie 只能有效多长时间。
+opts 这个对象里记录了一些 Cookie 的配置信息，这里最重要的是 maxAge 这个属性，它告诉浏览器，这个 Cookie 只能有效多长时间。
 
-4. 为了使res.cookie()正确工作还需进一步设置中间间
+4. 为了使res.cookie()正确工作还需进一步设置中间件
 
 ```js
 // filepath: app.js
@@ -281,7 +281,7 @@ app.use(cookieParser(config.cookieName)); // 修改
 
 #### 判断每一个 HTTP 请求的cookie信息
 
-每一次 http 请求，服务都需要判断 cookie 中的信息，以确保当前发起请求的用户是否是登录状态。
+每一次 http 请求，服务都需要判断 Cookie 中的信息，以确保当前发起请求的用户是否是登录状态。
 
 1. 新建一个检查登录状态的中间件
 
@@ -301,7 +301,7 @@ function authUser(req, res, next) {
         next(); // 为什么这里不是next(err)？？
       } else {
         res.locals.currentUser = user;
-        next(); 为什么这里不是next(err)？？
+        next(); // 为什么这里不是next(err)？？
       }
     });
   } else {
@@ -312,9 +312,9 @@ function authUser(req, res, next) {
 module.exports = { authUser };
 ```
 
-authUser 函数会把每一个请求的 cookie 数据读出来，因为服务知道 cookie 里存了什么，所以，在这里把读出来的值直接取数据库查用户信息即可。
+authUser 函数会把每一个请求的 Cookie 数据读出来，因为服务知道 Cookie 里存了什么，所以，在这里把读出来的值直接去数据库查用户信息即可。
 
-查到的用户信息存在 res.locals.currentUser 中。为什么存在这里？为了在视图引擎在处理 ejs 时能读到登录的用户信息。
+查到的用户信息存在 res.locals.currentUser 中。为什么存在这里？为了让视图引擎在处理 ejs 时能读到登录的用户信息。
 
 2. 植入验证用户信息的中间件
 
@@ -328,11 +328,11 @@ app.use('/', page);
 app.use('/api/v1', api);
 ```
 
-#### 根据用户信息弹性的构建导航条
+#### 根据用户信息弹性地构建导航条
 
 前面我们获取到了登录用户的信息并存在了 res.locals.currentUser 中。
 
-可以利用 currentUser 这个对象来弹性的构建导航条信息。
+可以利用 currentUser 这个对象来弹性地构建导航条信息。
 
 ```html
 // filepath: ./views/_nav.ejs
