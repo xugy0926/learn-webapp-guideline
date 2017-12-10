@@ -149,3 +149,7 @@ router.get('/posts/create', auth.adminRequired, function(req, res, next) {
 });
 ```
 
+## 实例
+
+参考 [first-app-sample-20](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-20)
+
