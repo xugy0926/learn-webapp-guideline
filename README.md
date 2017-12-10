@@ -28,7 +28,7 @@
 * [25.添加账户系统](25-add-account.md)
 * [26.权限控制](26-permission.md)
 * [27.更好的错误中枢](27-good-error-handle.md)
-* [28.session和功能限制](28-session-and-permission.md)
+* [28.session和功能限制 - 12/10](28-session-and-permission.md)
 * [附: 用Docker安装mongodb](install-mongodb-from-docker.md)
 * [附：漂亮地显示文章](pretty-post.md)
 * [关于作者](about-author.md)
