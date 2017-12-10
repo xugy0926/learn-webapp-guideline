@@ -78,7 +78,7 @@ axios采用post方法来发送数据，路由地址是'/api/posts'。
 
 ```javascript
 /* POST posts */
-router.post('/posts', function (req, res, next) {
+router.post('/posts/create', function (req, res, next) {
   var title = req.body.title;
   var content = req.body.content;
   res.send({title, content}); // 收到数据后，又把数据返回给了请求方
