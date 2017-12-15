@@ -74,7 +74,7 @@ function authUser(req, res, next) {
 
     if (authToken) {
       UserModel.findOne({ _id: authToken }, function(err, user) {
-        if (err) {
+        if (err || !user) {
           next();
         } else {
           if (user.loginname === config.admin) {
