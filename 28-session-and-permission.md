@@ -54,7 +54,7 @@ app.use(auth.authUser);
 ```
 
 改造 authUser 函数。
-之前，该函数用于与对 Cookie 信息读取并找到对用的用户信息。
+之前，该函数用于与对 Cookie 信息读取并找到对应的用户信息。
 现在，我们增加了一个分支的判断，即先对 req.session 进行判断，如果 req.session里有 user 信息，那么就用这个，并赋值给 res.locals.currentUser。
 
 注：res.locals.currentUser 这个对象是给 ejs 构建页面时使用的。
@@ -135,7 +135,7 @@ function adminRequired(req, res, next) {
 
 现在既可以把用户信息存在 session 里，也拥有了一个判断是否为管理员权限的中间件。
 
-我们最需要把 adminRequired 恰当的位置自己可。
+我们只需要把 adminRequired 放在恰当的位置即可。
 
 比如只有管理员权限的用户才能打开新建文章页面。
 
