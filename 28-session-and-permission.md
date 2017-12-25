@@ -77,9 +77,8 @@ function authUser(req, res, next) {
         if (err || !user) {
           next();
         } else {
-          if (user.loginname === config.admin) {
-            user.isAdmin = true;
-          }
+          user = user.toObject();
+          user.isAdmin = user.loginname === config.admin;
 
           req.session.user = user;
           res.locals.currentUser = user;
@@ -100,9 +99,8 @@ function authUser(req, res, next) {
 ```js
 //filepath: ./middlewares/auth.js auth
 
-if (user.loginname === config.admin) {
-  user.isAdmin = true;
-}
+user = user.toObject();
+user.isAdmin = user.loginname === config.admin;
 
 req.session.user = user;
 res.locals.currentUser = user;
