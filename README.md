@@ -31,6 +31,7 @@
 * [28.session和功能限制 - 12/10](28-session-and-permission.md)
 * [29.构建 babel 编译结构 - 12/20](29-babel.md)
 * [30.运用 es6 语法 - 12/20](30-use-es6.md)
+* [31.JWT - 12/25](30-jwt.md)
 * [附: 用Docker安装mongodb](install-mongodb-from-docker.md)
 * [附：漂亮地显示文章](pretty-post.md)
 * [关于作者](about-author.md)
