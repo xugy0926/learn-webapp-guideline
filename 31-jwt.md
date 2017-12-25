@@ -22,6 +22,8 @@ JWT 的全称是 Json web token，JWT 一般被用来在身份提供者和服务
 - 客户端每次发请求时将获得的 jwt 字符串一并给到 服务器。
 - 客户端（iOS，android）一般把 jwt 字符串设置到 http 请求的 header 部分，但是，在进行网页开发时，可以依靠 cookie 来存放。
 
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fmt65ppd12j31120ksac4.jpg)
+
 #### 安装依赖
 
 ```
