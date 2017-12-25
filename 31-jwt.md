@@ -47,7 +47,7 @@ export default {
 
 #### 修改登录过程
 
-在处理登录时，将 `userId` `name` `isAdmin` `exp(过期时间)` 通过 jwt 编码成一个字符串，以后称该字符串为 token。
+在处理登录时，将 `_id` `name` `isAdmin` `exp(过期时间)` 通过 jwt 编码成一个字符串，以后称该字符串为 token。
 
 并将 token 保存在 cookie 里，这样客户端在发起 http 请求是才有机会把 token 送给服务器。
 
@@ -70,7 +70,7 @@ router.post('/signin', function(req, res, next) {
       // 生产 token
       const token = jwt.encode(
         {
-          userId: user._id,
+          _id: user._id,
           name: user.name,
           isAdmin: user.loginname === config.admin ? true : false,
           exp: moment().add('days', 30).valueOf(),
@@ -99,7 +99,7 @@ router.post('/signin', function(req, res, next) {
 
 服务器要获得 token，需要解开 cookie 并拿到 token。然后对 token 进行解码，并获得里面的信息。
 
-因为我们在构成 token 时，里面有 `userId`  `name` `isAdmin`信息，那么我们就不需要重新去数据库里查找用户，这样节约了一次查询动作整个处理速度更快。
+因为我们在构成 token 时，里面有 `_id`  `name` `isAdmin`信息，那么我们就不需要重新去数据库里查找用户，这样节约了一次查询动作整个处理速度更快。
 
 在下面的代码中，在读取 cookie 中的 token 之前，会先检查一下请求的 headers 部分是否也有 token，如果有，就用 headers 里的。这样做的目的是为了照顾那么不用 cookie 方式传 token的客户端。比如，android 客户端传递 token 一般会往请求的 headers 设置 token。
 
