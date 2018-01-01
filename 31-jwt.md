@@ -13,12 +13,12 @@ JWT 的全称是 Json web token，JWT 一般被用来在身份提供者和服务
 #### session
 
 - 登录用户信息保存在服务器端（可以保存在内存、数据库或文件）。
-- session 的唯一标识要依靠 cookie 保存在客户端，当客户端发起请求是，会把 cookie 给服务器，服务器会解开 cookie 并获得 session 的唯一标识，以后这个唯一标识去查找对应的数据。
+- session 的唯一标识要依靠 cookie 保存在客户端，当客户端发起请求时，会把 cookie 给服务器，服务器会解开 cookie 并获得 session 的唯一标识，以后这个唯一标识去查找对应的数据。
 - session 不仅可以记录用户的信息，也可以记录业务信息。更多时候是用 session 来跟踪用户的状态。
 
 #### jwt
 - jwt 很单纯，仅仅处理用户身份信息。
-- 服务器将用户信息加密生成生成 jwt 字符串后发给客户端。
+- 服务器将用户信息加密生成 jwt 字符串后发给客户端。
 - 客户端每次发请求时将获得的 jwt 字符串一并给到 服务器。
 - 客户端（iOS，android）一般把 jwt 字符串设置到 http 请求的 header 部分，但是，在进行网页开发时，可以依靠 cookie 来存放。
 
@@ -51,7 +51,7 @@ export default {
 
 在处理登录时，将 `_id` `name` `isAdmin` `exp(过期时间)` 通过 jwt 编码成一个字符串，以后称该字符串为 token。
 
-并将 token 保存在 cookie 里，这样客户端在发起 http 请求是才有机会把 token 送给服务器。
+并将 token 保存在 cookie 里，这样客户端在发起 http 请求时才有机会把 token 送给服务器。
 
 ```js
 // filepath: ./src/route.api.js
@@ -101,9 +101,9 @@ router.post('/signin', function(req, res, next) {
 
 服务器要获得 token，需要解开 cookie 并拿到 token。然后对 token 进行解码，并获得里面的信息。
 
-因为我们在构成 token 时，里面有 `_id`  `name` `isAdmin`信息，那么我们就不需要重新去数据库里查找用户，这样节约了一次查询动作整个处理速度更快。
+因为我们在构成 token 时，里面有 `_id`  `name` `isAdmin`信息，那么我们就不需要重新去数据库里查找用户，这样节约了一次查询动作，整个处理速度更快。
 
-在下面的代码中，在读取 cookie 中的 token 之前，会先检查一下请求的 headers 部分是否也有 token，如果有，就用 headers 里的。这样做的目的是为了照顾那么不用 cookie 方式传 token的客户端。比如，android 客户端传递 token 一般会往请求的 headers 设置 token。
+在下面的代码中，在读取 cookie 中的 token 之前，会先检查一下请求的 headers 部分是否也有 token，如果有，就用 headers 里的。这样做的目的是为了照顾那些不用 cookie 方式传 token的客户端。比如，android 客户端传递 token 一般会往请求的 headers 设置 token。
 
 以下的代码就兼容了两种传递 token 的方式。
 
