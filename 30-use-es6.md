@@ -70,7 +70,7 @@ function authUser(req, res, next) {
         if (err) {
           next();
         } else {
-          if (user.loginname === config.admin) {
+          if (user.name === config.admin) {
             user.isAdmin = true;
           }
 
