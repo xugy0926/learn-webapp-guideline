@@ -43,7 +43,7 @@ router.post('/posts', auth.adminRequired, function(req, res, next) {
 });
 ```
 
-我们可以把逻辑放在 controllers/posts.js 里
+我们可以把逻辑放在 controllers/post.js 里
 
 ```js
 // filepath: ./src/controllers/post.js
