@@ -100,7 +100,7 @@ function authUser(req, res, next) {
 //filepath: ./middlewares/auth.js auth
 
 user = user.toObject();
-user.isAdmin = user.loginname === config.admin;
+user.isAdmin = user.name === config.admin;
 
 req.session.user = user;
 res.locals.currentUser = user;
@@ -150,4 +150,3 @@ router.get('/posts/create', auth.adminRequired, function(req, res, next) {
 ## 实例
 
 参考 [first-app-sample-20](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-20)
-
