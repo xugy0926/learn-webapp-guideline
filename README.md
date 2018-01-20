@@ -33,6 +33,7 @@
 * [30.运用 es6 语法 - 12/20](30-use-es6.md)
 * [31.JWT - 12/25](31-jwt.md)
 * [32.分离路由和逻辑 - 12/25](32-route-classified-again.md)
+* [33.邮箱激活账号 - 18/1/20](33-active-account.md)
 * [附: 用Docker安装mongodb](install-mongodb-from-docker.md)
 * [附：漂亮地显示文章](pretty-post.md)
 * [关于作者](about-author.md)
