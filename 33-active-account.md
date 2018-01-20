@@ -267,3 +267,6 @@ export const activeAccount = function (req, res, next) {
 
 在更新完 active = true 后，再一次更新了 jwt 信息，目的是为了客户端能拿到最新的用户信息。
 
+## 实例
+
+参考 [first-app-sample-25](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-25)
