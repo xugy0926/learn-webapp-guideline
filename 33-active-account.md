@@ -56,7 +56,7 @@ var vm = new Vue({
 </script>
 ```
 
-在服务端处理注册逻辑时，也要增加对 email 新字段的处理，这一块可以参考代码
+在服务端处理注册逻辑时，也要增加对 email 新字段的处理，这一块可以参考一下代码。
 
 ```
 ./src/controllers/user.js
@@ -82,6 +82,56 @@ const UserModel = mongoose.model('User', UserSchema);
 
 export default UserModel;
 ```
+
+当用户的基本信息具有 active 属性后，我们可以用 active 来阻挡用户的一些操作。比如，如果用户登陆了不是激活状态，可以直接报错。
+
+```js
+// ./src/middlewares/auth.js
+
+export const userRequired = (req, res, next) => {
+  if (!req.user) {
+    let err = new Error('需要登录');
+    err.status = 403;
+    next(err);
+    return;
+  }
+
+  if (!req.user.active) {
+    let err = new Error('需要激活');
+    err.status = 403;
+    next(err);
+    return;
+  }
+
+  next();
+};
+
+export const adminRequired = (req, res, next) => {
+  if (!req.user) {
+    let err = new Error('需要登录');
+    err.status = 403;
+    next(err);
+    return;
+  }
+
+  if (!req.user.active) {
+    let err = new Error('需要激活');
+    err.status = 403;
+    next(err);
+    return;
+  }
+
+  if (!req.user.isAdmin) {
+    let err = new Error('需要管理员权限');
+    err.status = 403;
+    next(err);
+    return;
+  }
+
+  next();
+};
+```
+
 
 激活的处理原理并不是很难。
 1. 在注册时，我们可以把 email 和 pass 拼接在一起后生成一个 md5 字符串，这个 md5 字符串可以称为激活用的 token。
