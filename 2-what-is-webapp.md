@@ -34,7 +34,7 @@ WebAPP 到底是什么？WebAPP 是近年来比较流行的词。
 
 1. 处理路由能力。一个网站都会提供多个地址的访问能力，比如 [https://xinshengdaxue.com](https://xinshengdaxue.com) 可以访问新生大学的主页，[https://web.xinshengdaxue.com/home/lessons](https://web.xinshengdaxue.com/home/lessons) 可以访问所有课程页面。一个地址代表一个访问路径，一般称为路由，WebAPP 必须具备分析不同路由的能力。
 
-2. 构建页面能力。WebAPP 提供页面是最基本的能力，构建 HTML 就是开发中最重要的工作，也是最繁重的工作。正因为繁重，在技术才才会采用前后端分离的开放模式，提供 HTML 页面的 Client 端由前端工程师完成，提供数据的 Server 端由服务端工程师完成。
+2. 构建页面能力。WebAPP 提供页面是最基本的能力，构建 HTML 就是开发中最重要的工作，也是最繁重的工作。正因为繁重，在技术上才会采用前后端分离的开放模式，提供 HTML 页面的 Client 端由前端工程师完成，提供数据的 Server 端由服务端工程师完成。
 
 3. 操作浏览器能力。浏览器提供了很多功能，常见的有 Cookie 和 Storage。Cookie 和 Storage 都是浏览器的存储技术，利用这些技术可以在浏览器端缓存一些必要的信息。这些技术都可以通过查阅 [Web API](https://developer.mozilla.org/zh-CN/docs/Web) 文档获得。
 
