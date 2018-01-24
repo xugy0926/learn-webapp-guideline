@@ -4,7 +4,7 @@
 
 #### 安装 NVM
 
-[https://xugaoyang.com/post/59d3b2b9fbbefc4e650f4c14](https://xugaoyang.com/post/59d3b2b9fbbefc4e650f4c14)
+[http://xugaoyang.com/post/59d3b2b9fbbefc4e650f4c14](http://xugaoyang.com/post/59d3b2b9fbbefc4e650f4c14)
 
 安装 NVM 后，在终端执行下面命令查看 NVM 的版本，以判断是否安装成功。
 
