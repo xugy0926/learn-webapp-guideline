@@ -1,4 +1,4 @@
-# 邮箱激活账号 
+# 邮箱激活账号
 
 用邮箱激活账号，在注册的时候必须先让用户输入个人邮箱。先把准备工作做好。
 
@@ -136,7 +136,7 @@ export const adminRequired = (req, res, next) => {
 激活的处理原理并不是很难。
 1. 在注册时，我们可以把 email 和 pass 拼接在一起后生成一个 md5 字符串，这个 md5 字符串可以称为激活用的 token。
 2. 用 key 拼一个 url。比如：localhost:3000/activeAccount?key=token&name=name
-3. 给用户发一封邮件，邮件内容是包含`<a href="ocalhost:3000/activeAccount?key=token&name=name">激活</a>`。
+3. 给用户发一封邮件，邮件内容是包含`<a href="localhost:3000/activeAccount?key=token&name=name">激活</a>`。
 
 如果用户在注册的时候填错了邮箱，这个激活的 url 也就发给了别人。所以，在注册时要提示用户填写自己的邮箱。
 
@@ -187,7 +187,7 @@ export const signup = function (req, res, next) {
 };
 ```
 
-设计一个简单的发送邮件函数。如果你对发送邮件的处理不是很明白，可以先单独试验一下 [例子](http://code.7xinsheng.com/post/59eee25998dae164a86e8b8f)
+设计一个简单的发送邮件函数。如果你对发送邮件的处理不是很明白，可以先单独试验一下 [例子](http://xugaoyang.com/post/59eee25998dae164a86e8b8f)
 
 ```js
 // ./src/common/mail.js
@@ -218,7 +218,7 @@ export function sendActiveMail(who, token, name) {
     `<a href  = "${SITE_ROOT_URL}/api/v1/activeAccount?key=${token}&name=${name}">激活链接</a>` +
     `<p>若您没有在${config.name}社区填写过注册信息，说明有人滥用了您的电子邮箱，请删除此邮件，我们对给您造成的打扰感到抱歉。</p>` +
     `<p>${config.name} 谨上。</p>`;
-  
+
   sendMail({
     to,
     subject,
