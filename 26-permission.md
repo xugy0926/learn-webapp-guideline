@@ -115,6 +115,10 @@ mongoose.connect(config.mongodbUrl, {
   useMongoClient: true
 });
 ```
+
+如果你安装mongoose的版本是>=5.x，要去掉 `{ useMongoClient: true }`，否则运行webapp时会报错:
+> WARNING: The `useMongoClient` option is no longer necessary in mongoose 5.x, please remove it.
+
 ## 实例
 
 参考 [first-app-sample-18](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-18)
