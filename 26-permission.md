@@ -119,6 +119,9 @@ mongoose.connect(config.mongodbUrl, {
 如果你安装mongoose的版本是>=5.x，要去掉 `{ useMongoClient: true }`，否则运行webapp时会报错:
 > WARNING: The `useMongoClient` option is no longer necessary in mongoose 5.x, please remove it.
 
+然后换成`{ useNewUrlParser: true }`，因为：
+> DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+
 ## 实例
 
 参考 [first-app-sample-18](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-18)
