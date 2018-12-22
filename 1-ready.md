@@ -45,6 +45,3 @@ $ nvm use 6.4.0
 ```
 
 关于 NVM 的更多使用请参考[这里](https://github.com/creationix/nvm#usage)。
-
-
-
