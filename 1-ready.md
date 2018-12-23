@@ -1,47 +1,61 @@
 # 准备
 
-本指导书将以 Node 为开发环境讲解如何开发 WebApp，在学习之前需要安装 NVM 和 Node 运行环境。
+本书将以 Node 为开发环境讲解如何开发 WebApp，在学习之前需要安装 NVM 和 Node 运行环境。
 
 #### 安装 NVM
 
-[https://code.7xinsheng.com/post/59d3b2b9fbbefc4e650f4c14](https://code.7xinsheng.com/post/59d3b2b9fbbefc4e650f4c14)
+[http://xugaoyang.com/post/59d3b2b9fbbefc4e650f4c14](http://xugaoyang.com/post/59d3b2b9fbbefc4e650f4c14)
 
-安装 NVM 后，在终端执行下面命令查看 NVM 的版本，以判断是否安装成功。
+安装 NVM 后，在终端执行下面命令查看 NVM 的版本，如果能显示版本号即代表 nvm 安装成功。
 
 ```
 $ nvm --version
+
+// output: 0.33.2
 ```
 
 #### 通过 NVM 安装 Node
 
 ```
-$ nvm install 8.1.1
+$ nvm install 8.12.0
 ```
 
-判断是否安装成功
+查看 Node 版本，如果能显示版本号即代表 Node 安装成功。
 
 ```
 $ node --version
 
-// output: v8.1.1
+// output: v8.12.0
 ```
 
-安装完一个版本后，还可以继续安装其他 Node 版本
+安装完一个版本后，还可以继续安装其他 Node 版本。
 
 ```
-$ nvm install 6.4.0
+$ nvm install 10.13.0
 ```
 
-可以列出目前装的所有 Node 版本
+可以列出目前装的所有 Node 版本。
 
 ```
-$ nvm list
+$ nvm ls
 ```
 
-可以随意在已经安装的 Node 版本之间切换
+也可以随意在已经安装的 Node 版本之间切换。
 
 ```
-$ nvm use 6.4.0
+$ nvm use 10.13.0
 ```
+
+<<<<<<< HEAD
+关于 NVM 的更多使用请参考[这里](https://github.com/creationix/nvm#usage)。
+=======
+为了保证每次打开终端都能使用某个固定的 Node 版本。可以设置默认使用版本。
+
+```
+$ nvm alias default 8.12.0
+```
+
+
 
 关于 NVM 的更多使用请参考[这里](https://github.com/creationix/nvm#usage)。
+>>>>>>> upstream/master

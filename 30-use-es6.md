@@ -182,13 +182,12 @@ const app = express();
 #### 用解构，而不是挨个读取对象的属性
 
 ```js
-var id = req.params.id;
-var title = req.params.title;
-var content = req.params.content;
+var title = req.body.title;
+var content = req.body.content;
 ```
 
 ```js
-const { id, title, content } = req.params;
+const { title, content }  = req.body;
 ```
 
 ## 实例
