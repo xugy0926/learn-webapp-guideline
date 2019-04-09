@@ -1,8 +1,8 @@
-## 项目结构
+# 项目结构
 
 总览
 
-```
+```bash
 - ../my_project/first-app/          # 工程目录
     - bin/                          # 存放命令行相关代码
         www                         # express的入口文件
@@ -24,7 +24,7 @@
 
 #### /bin
 
-```
+```bash
 ./bin
 ./bin/www
 ```
@@ -33,7 +33,7 @@
 
 #### /public
 
-```
+```bash
 ./public
 ./public/javascripts
 ./public/images
@@ -47,7 +47,7 @@
 
 #### /routes
 
-```
+```bash
 ./routes
 ./routes/index.js
 ./routes/users.js
@@ -59,7 +59,7 @@
 
 #### /views
 
-```
+```bash
 ./views
 ./views/index.ejs
 ./views/layout.ejs
@@ -70,7 +70,7 @@
 
 #### 配置文件
 
-```
+```bash
 ./package.json
 ```
 
@@ -82,7 +82,7 @@
 
 另外，还有一些脚本信息。比如，上一节提到的运行项目的指令。
 
-```
+```bash
 DEBUG=first-app:* npm start
 ```
 
@@ -96,7 +96,7 @@ npm start 中的 start 就是在 package.json 中定义的一个脚本。
 
 #### 主程序文件
 
-```
+```bash
 ./app.js
 ```
 

@@ -12,7 +12,7 @@
 
 在 first-app/app.js 文件中有如下代码。
 
-```
+```javascript
 var index = require('./routes/index');
 var users = require('./routes/users');
 ```
@@ -23,7 +23,7 @@ var users = require('./routes/users');
 
 在 first-app/app.js 文件中设置了路由和逻辑处理模块的关系。
 
-```
+```javascript
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -39,7 +39,7 @@ app.use('/users', users);
 
 在 first-app/app.js 中针对其他路由都会执行统一的代码并返回一个错误页面。
 
-```
+```javascript
 // catch 404 and forward to error handler
 
 app.use(function(req, res, next) {
@@ -55,7 +55,7 @@ app.use(function(req, res, next) {
 
 路由`/`对应的逻辑模块是 routes/index.js。一般情况下`/`路由对应的页面称为首页（或主页）。
 
-```
+```javascript
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -66,7 +66,7 @@ router.get('/', function(req, res, next) {
 
 在终端输入快捷组合键`ctrl + c`可以停止运行 first-app 服务。然后，再执行指令运行服务。
 
-```
+```bash
 输入ctrl + c
 
 $ DEBUG=first-app:* npm start
@@ -76,7 +76,7 @@ $ DEBUG=first-app:* npm start
 
 路由`/users`对应的逻辑模块是`/routes/users.js`。
 
-```
+```javascript
 /* GET users listing. */
 
 router.get('/', function(req, res, next) {

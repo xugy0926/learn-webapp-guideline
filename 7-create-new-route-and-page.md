@@ -63,7 +63,7 @@ app.use("/posts", posts);
 
 require\(\)是 node.js 的一个全局函数，专门用于引用内部文件（模块）。一个项目为了保证功能模块更清晰，会将不同的功能写在不同的文件里。比如，./app.js 控制路由，./routes/index.js 处理某个路由逻辑，当./app.js 要调用./routes/index.js 时，就必须先将./routes/index.js 引入进来，并赋值给变量 index。
 
-```
+```javascript
 var index = require('./routes/index');
 var posts = require('./routes/posts');
 ```

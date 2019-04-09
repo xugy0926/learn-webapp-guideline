@@ -1,8 +1,8 @@
-## 基于 Express 创建 WebAPP
+# 基于 Express 创建 WebAPP
 
 #### 安装 Express
 
-```
+```bash
 $ npm install -g express-generator@4
 ```
 
@@ -14,7 +14,7 @@ express-generator@4 中的 4 是版本代号，表示安装版本为 4.x。目�
 
 - 进入你任何一个平时工作或学习用的文件夹
 
-```
+```bash
 $ cd your_work_directory
 ```
 
@@ -22,7 +22,7 @@ $ cd your_work_directory
 
 在当前目录下创建 first-app 文件夹。
 
-```
+```bash
 $ mkdir first-app
 ```
 
@@ -30,13 +30,13 @@ $ mkdir first-app
 
 - 进入 first-app 目录
 
-```
+```bash
 $ cd first-app
 ```
 
 - 在当前目录执行 express 来创建一个基于 Express 的 WebApp
 
-```
+```bash
 $ express --view=ejs
 ```
 
@@ -46,7 +46,7 @@ $ express --view=ejs
 
 安装所有 package.json 中的依赖包。
 
-```
+```bash
 $ npm install
 ```
 
@@ -54,25 +54,25 @@ $ npm install
 
 mac 系统
 
-```
+```bash
 $ DEBUG=first-app:* npm start
 ```
 
 windows 系统
 
-```
+```bash
 $ set DEBUG=first-app:* npm start
 ```
 
 不管是 mac 系统还是 windows 系统，也可以直接通过 npm start 启动。
 
-```
+```bash
 $ npm start
 ```
 
 甚至也可以不用 npm start，直接通过 node 命令来启动项目。
 
-```
+```bash
 $ node ./bin/www
 ```
 

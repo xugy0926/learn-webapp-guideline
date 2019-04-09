@@ -2,7 +2,7 @@
 
 在 express 中，模板引擎也可以称为视图引擎，随便怎么叫。express 引入模板引擎的目的是为了更好地构建 html 页面。还记得在创建 first-app 项目时的参数吗？
 
-```
+```bash
 $ express --view=ejs
 ```
 
