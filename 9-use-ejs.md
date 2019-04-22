@@ -1,23 +1,26 @@
-# 定制ejs模板
+# 定制 ejs 模板
 
-我们拿posts.ejs为例，如何在posts.ejs中构建一个列表结构的html呢？
+我们拿 posts.ejs 为例，如何在 posts.ejs 中构建一个列表结构的 html 呢？
 
-比如，在posts.js中我们给定一个列表postsList
+比如，在 posts.js 中我们给定一个列表 postsList
 
 ```js
-router.get('/', function(req, res, next) {
-  res.render('posts', { title: 'posts', postsList: ['文章1', '文章2', '文章3'] });
+router.get("/", function(req, res, next) {
+  res.render("posts", {
+    title: "posts",
+    postsList: ["文章1", "文章2", "文章3"]
+  });
 });
 ```
 
-在posts.ejs中，应该利用数据postsList来构建列表模板。
+在 posts.ejs 中，应该利用数据 postsList 来构建列表模板。
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
     <h1><%= title %></h1>
@@ -30,7 +33,7 @@ router.get('/', function(req, res, next) {
 </html>
 ```
 
-ejs模板文件中可以嵌入代码，但代码一定是写在&lt;% %&gt;中。下面归纳一些[使用技巧][1]。
+ejs 模板文件中可以嵌入代码，但代码一定是写在&lt;% %&gt;中。下面归纳一些[使用技巧][1]。
 
 使用某个变量的值要用&lt;%= %&gt;
 
@@ -54,11 +57,10 @@ ejs模板文件中可以嵌入代码，但代码一定是写在&lt;% %&gt;中。
 
 总之，只需要在正常的代码前后加上&lt;% 和 %&gt;即可，如果是赋值语句还要加上=号。
 
-ejs模板引擎针对学习者相对很友好，只是看上去有点乱而已。
+ejs 模板引擎针对学习者相对很友好，只是看上去有点乱而已。
 
 ## 实例
 
 参考 [first-app-sample-4](https://github.com/xugy0926/learn-webapp-sample/tree/master/first-app-sample-4)
- 
- [1]: http://ejs.co/
 
+[1]: http://ejs.co/

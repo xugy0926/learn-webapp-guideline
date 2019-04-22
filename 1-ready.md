@@ -52,6 +52,4 @@ $ nvm use 10.13.0
 $ nvm alias default 8.12.0
 ```
 
-
-
 关于 NVM 的更多使用请参考[这里](https://github.com/creationix/nvm#usage)。
